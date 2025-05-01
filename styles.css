@@ -2,46 +2,507 @@
     --primary-bg: #29282b;
     --secondary-bg: #e3dfdc;
     --accent-color: #e8493b;
+    --success-color: #1a472a;
     --font-family: 'Inter', sans-serif;
-  }
-  
-  body {
+    --container-width: 1200px;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     margin: 0;
     font-family: var(--font-family);
+    background-color: var(--secondary-bg);
+    color: var(--primary-bg);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+nav {
     background-color: var(--primary-bg);
-    color: var(--secondary-bg);
-  }
-  
-  nav {
-    background-color: var(--primary-bg);
-    padding: 1rem;
+    padding: var(--spacing-md);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  nav a {
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.logo {
     color: var(--secondary-bg);
-    margin: 0 1rem;
+    font-weight: 800;
+    font-size: 1.5rem;
     text-decoration: none;
-    font-weight: bold;
-  }
-  
-  nav a:hover {
-    color: var(--accent-color);
-  }
-  
-  .button-accent {
+    letter-spacing: -0.02em;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: translateY(-2px);
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+nav a {
+    color: var(--secondary-bg);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
     background-color: var(--accent-color);
-    color: var(--primary-bg);
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button-accent:hover {
+    transition: width 0.3s ease;
+}
+
+nav a:hover:after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+main {
+    margin-top: 120px;  /* Increased to prevent navbar overlap */
+}
+
+.hero {
+    padding: 0;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--primary-bg);
+    color: var(--secondary-bg);
+    margin: 0;
+}
+
+.hero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(41, 40, 43, 0.05) 0%, rgba(232, 73, 59, 0.05) 100%);
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.4fr;  /* Made image portion even larger */
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: transform 0.5s ease;
+}
+
+.hero-image:hover {
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+.hero-image-container {
+    padding: var(--spacing-md);
+    position: relative;
+}
+
+.hero-image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--accent-color) 0%, transparent 50%);
+    opacity: 0.1;
+    border-radius: var(--border-radius);
+    transform: translateZ(-1px);
+    transition: opacity 0.3s ease;
+}
+
+.hero-image-container:hover::before {
+    opacity: 0.2;
+}
+
+h1 {
+    font-size: 7rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: -0.03em;
+}
+
+.accent-text {
+    color: var(--accent-color);
+    font-style: italic;
+    position: relative;
+    display: inline-block;
+}
+
+.accent-text:after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-color);
+    opacity: 0.3;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    color: rgba(227, 223, 220, 0.9);
+    font-weight: 400;
+    max-width: 600px;
+}
+
+.button-accent {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(232, 73, 59, 0.2);
+}
+
+.button-accent:hover {
     background-color: #d73b2f;
-  }
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(232, 73, 59, 0.3);
+}
+
+.contrast-section {
+    background-color: var(--primary-bg);
+    color: var(--secondary-bg);
+    padding: var(--spacing-lg) 0;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.contrast-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(232, 73, 59, 0.1) 0%, transparent 100%);
+    z-index: 1;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg) 0;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    color: var(--primary-bg);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card h3 {
+    color: var(--primary-bg);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.feature-card p {
+    color: #333;
+}
+
+/* Methodology page specific styles */
+.methodology-section {
+    padding: var(--spacing-lg) 0;
+    background: var(--primary-bg);
+    color: var(--secondary-bg);
+    min-height: 100vh;
+}
+
+.methodology-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.methodology-header h1 {
+    font-size: 5rem;
+    margin-bottom: var(--spacing-md);
+    line-height: 1;
+}
+
+.methodology-intro {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg);
+    color: rgba(227, 223, 220, 0.9);
+    line-height: 1.6;
+}
+
+.methodology-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.methodology-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.methodology-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.methodology-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.methodology-card h3::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 24px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+.methodology-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.methodology-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.methodology-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.methodology-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--spacing-lg) 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.methodology-table th,
+.methodology-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.methodology-table th {
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: 600;
+}
+
+.methodology-table tr:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.check-icon {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Lessons page styles */
+.lessons-section {
+    padding: var(--spacing-lg) 0;
+}
+
+.section-intro {
+    font-size: 1.25rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg);
+    text-align: center;
+}
+
+.lesson-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.lesson-item {
+    background: white;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.lesson-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.lesson-header {
+    padding: 1.5rem;
+    background: var(--primary-bg);
+    color: var(--secondary-bg);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.lesson-header:hover {
+    background: #363538;
+}
+
+.lesson-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.accordion-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+
+.lesson-item.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.lesson-content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.lesson-content.active {
+    padding: 1.5rem;
+    max-height: 500px;
+}
+
+.lesson-preview {
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.lesson-preview p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.lesson-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.lesson-link:hover {
+    background-color: #d73b2f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(232, 73, 59, 0.2);
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+
+    main {
+        margin-top: 100px;
+    }
+}
   
