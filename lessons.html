@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lessons - Digital Media Literacy</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <style>
+    .accordion {
+      background-color: var(--secondary-bg);
+      color: var(--primary-bg);
+      cursor: pointer;
+      padding: 1rem;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.2rem;
+      transition: background-color 0.3s ease;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    .accordion:hover {
+      background-color: #dcd8d5;
+    }
+
+    .panel {
+      padding: 0 1rem;
+      background-color: var(--secondary-bg);
+      display: none;
+      overflow: hidden;
+      border-radius: 0 0 8px 8px;
+      margin-bottom: 1rem;
+    }
+
+    .panel a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Media Literacy</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="lessons.html">Lessons</a>
+      <a href="methodology.html">Methodology</a>
+    </div>
+  </nav>
+  <main>
+    <section>
+      <h1>Lessons</h1>
+      <button class="accordion">Lesson 1: Understanding Misinformation</button>
+      <div class="panel">
+        <p>Explore the roots and impact of misinformation in the digital age.</p>
+        <a href="#">Go to Lesson 1</a>
+      </div>
+
+      <button class="accordion">Lesson 2: Evaluating Sources</button>
+      <div class="panel">
+        <p>Learn how to assess the credibility of various information sources.</p>
+        <a href="#">Go to Lesson 2</a>
+      </div>
+
+      <!-- Repeat for Lessons 3 through 8 -->
+    </section>
+  </main>
+  <script>
+    const accordions = document.querySelectorAll(".accordion");
+    accordions.forEach((accordion) => {
+      accordion.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
