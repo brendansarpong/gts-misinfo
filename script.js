@@ -8,6 +8,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Parallax effect
+window.addEventListener('scroll', () => {
+  const parallaxSections = document.querySelectorAll('.parallax-section');
+  parallaxSections.forEach(section => {
+    const bg = section.querySelector('.parallax-bg');
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * 0.5;
+    bg.style.transform = `translate3d(0, ${rate}px, 0)`;
+  });
+});
+
+// Scroll animations
+const scrollObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+});
+
+document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+  scrollObserver.observe(el);
+});
+
 // Enhanced scroll-based animations for feature cards
 const observerOptions = {
   threshold: 0.2,
@@ -51,7 +78,7 @@ window.addEventListener('scroll', () => {
   } else {
     // Scrolling up
     nav.style.transform = 'translateY(0)';
-    nav.style.backgroundColor = 'rgba(41, 40, 43, 0.98)';
+    nav.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
     nav.style.backdropFilter = 'blur(8px)';
   }
   lastScroll = currentScroll;
@@ -229,3 +256,79 @@ function startQuiz() {
 }
 
 window.addEventListener('DOMContentLoaded', startQuiz);
+
+// Carousel functionality
+function initCarousel() {
+  const track = document.querySelector('.lessons-track');
+  const prevButton = document.querySelector('.carousel-button.prev');
+  const nextButton = document.querySelector('.carousel-button.next');
+  const cards = document.querySelectorAll('.lesson-card');
+  
+  if (!track || !prevButton || !nextButton) return;
+  
+  let currentIndex = 0;
+  const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(cards[0]).marginRight);
+  const visibleCards = Math.floor(track.offsetWidth / cardWidth);
+  
+  function updateButtons() {
+    prevButton.disabled = currentIndex === 0;
+    nextButton.disabled = currentIndex >= cards.length - visibleCards;
+  }
+  
+  prevButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      track.scrollTo({
+        left: currentIndex * cardWidth,
+        behavior: 'smooth'
+      });
+      updateButtons();
+    }
+  });
+  
+  nextButton.addEventListener('click', () => {
+    if (currentIndex < cards.length - visibleCards) {
+      currentIndex++;
+      track.scrollTo({
+        left: currentIndex * cardWidth,
+        behavior: 'smooth'
+      });
+      updateButtons();
+    }
+  });
+  
+  // Initialize button states
+  updateButtons();
+  
+  // Update on window resize
+  window.addEventListener('resize', () => {
+    const newVisibleCards = Math.floor(track.offsetWidth / cardWidth);
+    if (currentIndex > cards.length - newVisibleCards) {
+      currentIndex = Math.max(0, cards.length - newVisibleCards);
+      track.scrollTo({
+        left: currentIndex * cardWidth,
+        behavior: 'smooth'
+      });
+    }
+    updateButtons();
+  });
+}
+
+// Zelda sound effect
+function initZeldaSound() {
+  const zeldaImage = document.querySelector('.zelda-image');
+  if (!zeldaImage) return;
+  
+  const audio = new Audio('Legend of Zelda Hidden Area Sound Effect.mp3');
+  
+  zeldaImage.addEventListener('click', () => {
+    audio.currentTime = 0;
+    audio.play();
+  });
+}
+
+// Initialize new features
+document.addEventListener('DOMContentLoaded', () => {
+  initCarousel();
+  initZeldaSound();
+});

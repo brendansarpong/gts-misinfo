@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lessons - Project Prometheus</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://rsms.me/">
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <nav>
@@ -23,113 +24,158 @@
   <main>
     <section class="lessons-section">
       <div class="container">
-        <h1 class="fade-slide-up">Your Learning Journey</h1>
-        <p class="section-intro fade-slide-up">Eight comprehensive lessons to master digital media literacy. Each lesson builds upon the previous, creating a solid foundation for critical thinking in the digital age.</p>
+        <h1 class="fade-in">Your Learning Journey</h1>
+        <p class="section-intro fade-in">Follow my carefully structured curriculum to develop your digital media literacy skills. Each lesson builds upon the previous one, creating a comprehensive understanding of how to navigate the digital information landscape.</p>
         
-        <div class="lesson-accordion">
-          <div class="lesson-item fade-slide-up">
-            <div class="lesson-header">
-              <h3>Lesson 1: Foundations of Digital Media</h3>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="lesson-content">
-              <div class="lesson-preview">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                <a href="lesson1.html" class="lesson-link">Start Lesson</a>
+        <div class="lessons-carousel">
+          <button class="carousel-button prev" aria-label="Previous lesson">←</button>
+          <div class="lessons-track">
+            <div class="lesson-card slide-in-left">
+              <div class="lesson-number">01</div>
+              <h3 class="lesson-title">Understanding Digital Media</h3>
+              <p class="lesson-description">Learn the fundamentals of digital media and how it shapes our understanding of the world.</p>
+              <a href="lesson1.html" class="button-accent">Start Lesson</a>
+              <div class="lesson-progress">
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
               </div>
             </div>
-          </div>
 
-          <div class="lesson-item fade-slide-up">
-            <div class="lesson-header">
-              <h3>Lesson 2: Information Verification Techniques</h3>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="lesson-content">
-              <div class="lesson-preview">
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-                <a href="#" class="lesson-link">Start Lesson</a>
+            <div class="lesson-card slide-in-left">
+              <div class="lesson-number">02</div>
+              <h3 class="lesson-title">Identifying Misinformation</h3>
+              <p class="lesson-description">Develop skills to recognize and analyze potentially misleading information online.</p>
+              <a href="lesson2.html" class="button-accent">Start Lesson</a>
+              <div class="lesson-progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
               </div>
             </div>
-          </div>
 
-          <div class="lesson-item fade-slide-up">
-            <div class="lesson-header">
-              <h3>Lesson 3: Source Evaluation Strategies</h3>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="lesson-content">
-              <div class="lesson-preview">
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
-                <a href="#" class="lesson-link">Start Lesson</a>
+            <div class="lesson-card slide-in-left">
+              <div class="lesson-number">03</div>
+              <h3 class="lesson-title">Source Evaluation</h3>
+              <p class="lesson-description">Master the art of evaluating information sources for credibility and reliability.</p>
+              <a href="lesson3.html" class="button-accent">Start Lesson</a>
+              <div class="lesson-progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
               </div>
             </div>
-          </div>
 
-          <div class="lesson-item fade-slide-up">
-            <div class="lesson-header">
-              <h3>Lesson 4: Understanding Bias and Perspective</h3>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="lesson-content">
-              <div class="lesson-preview">
-                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-                <a href="#" class="lesson-link">Start Lesson</a>
+            <div class="lesson-card slide-in-right">
+              <div class="lesson-number">04</div>
+              <h3 class="lesson-title">Fact-Checking Techniques</h3>
+              <p class="lesson-description">Learn practical methods for verifying information and debunking false claims.</p>
+              <a href="lesson4.html" class="button-accent">Start Lesson</a>
+              <div class="lesson-progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
               </div>
             </div>
-          </div>
 
-          <div class="lesson-item fade-slide-up">
-            <div class="lesson-header">
-              <h3>Lesson 5: Digital Footprint and Privacy</h3>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="lesson-content">
-              <div class="lesson-preview">
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias.</p>
-                <a href="#" class="lesson-link">Start Lesson</a>
+            <div class="lesson-card slide-in-right">
+              <div class="lesson-number">05</div>
+              <h3 class="lesson-title">Media Bias Analysis</h3>
+              <p class="lesson-description">Understand different types of media bias and how they influence information presentation.</p>
+              <a href="lesson5.html" class="button-accent">Start Lesson</a>
+              <div class="lesson-progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
               </div>
             </div>
-          </div>
 
-          <div class="lesson-item fade-slide-up">
-            <div class="lesson-header">
-              <h3>Lesson 6: Social Media Analysis</h3>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="lesson-content">
-              <div class="lesson-preview">
-                <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
-                <a href="#" class="lesson-link">Start Lesson</a>
+            <div class="lesson-card slide-in-right">
+              <div class="lesson-number">06</div>
+              <h3 class="lesson-title">Social Media Literacy</h3>
+              <p class="lesson-description">Navigate social media platforms with critical awareness and responsible sharing.</p>
+              <a href="lesson6.html" class="button-accent">Start Lesson</a>
+              <div class="lesson-progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
               </div>
             </div>
-          </div>
 
-          <div class="lesson-item fade-slide-up">
-            <div class="lesson-header">
-              <h3>Lesson 7: Fact-Checking Tools and Techniques</h3>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="lesson-content">
-              <div class="lesson-preview">
-                <p>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
-                <a href="#" class="lesson-link">Start Lesson</a>
+            <div class="lesson-card slide-in-right">
+              <div class="lesson-number">07</div>
+              <h3 class="lesson-title">Digital Privacy & Security</h3>
+              <p class="lesson-description">Protect your digital footprint and understand the importance of online privacy.</p>
+              <a href="lesson7.html" class="button-accent">Start Lesson</a>
+              <div class="lesson-progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
               </div>
             </div>
-          </div>
 
-          <div class="lesson-item fade-slide-up">
-            <div class="lesson-header">
-              <h3>Lesson 8: Creating and Sharing Responsibly</h3>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="lesson-content">
-              <div class="lesson-preview">
-                <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est.</p>
-                <a href="#" class="lesson-link">Start Lesson</a>
+            <div class="lesson-card slide-in-right">
+              <div class="lesson-number">08</div>
+              <h3 class="lesson-title">Ethical Digital Citizenship</h3>
+              <p class="lesson-description">Develop responsible digital habits and contribute positively to online communities.</p>
+              <a href="lesson8.html" class="button-accent">Start Lesson</a>
+              <div class="lesson-progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot active"></div>
               </div>
             </div>
           </div>
+          <button class="carousel-button next" aria-label="Next lesson">→</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="zelda-section">
+      <div class="container">
+        <div class="zelda-content">
+          <p class="zelda-text">It's dangerous to use the web alone. Take these lessons!</p>
+          <img src="link up.png" alt="Link from The Legend of Zelda" class="zelda-image">
         </div>
       </div>
     </section>
