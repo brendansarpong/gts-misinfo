@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lesson 4: That's Cap (Screenshots Lie) - Project Prometheus</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <a href="index.html" class="logo">Project Prometheus</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="lessons.html">Lessons</a>
+        <a href="methodology.html">Methodology</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="lesson-section">
+      <div class="container">
+        <h1 class="fade-in">Lesson 4: That's Cap (Screenshots Lie)</h1>
+        <div class="lesson-content fade-in">
+          <h2>Screenshots, Deepfakes, and AI—Oh My</h2>
+          <ul>
+            <li>Anyone can fake a screenshot using free tools. It's super easy.</li>
+            <li>But now we've also got AI-generated images and deepfake videos that can show people saying or doing things they never did.</li>
+            <li>It looks real. It spreads fast. It's often fake.</li>
+          </ul>
+          <p><b>Example:</b> A fake image of the Pope in a designer puffer coat went viral before people realized it was made with AI. Same with fake videos of celebrities or politicians saying things they never said.</p>
+          <hr>
+          <h2>Spot the Fakes</h2>
+          <ul>
+            <li>Screenshots: Blurry? Weird font? No link to the real post? Red flags.</li>
+            <li>AI images: Look for messed up hands, too-perfect faces, weird backgrounds, or text that looks like gibberish.</li>
+            <li>Videos: If a video seems off, check the source—deepfakes often spread without context or come from shady accounts.</li>
+          </ul>
+          <p><b>Tip:</b> Reverse image search. Tools like Google Lens or InVID (for videos) can help check where a file came from.</p>
+          <hr>
+          <h2>What You Can Do</h2>
+          <ul>
+            <li>Don't trust a post just because it has a picture or video.</li>
+            <li>Always look for a real source—can you find it on a trusted site, or is it only showing up on Twitter/X or TikTok?</li>
+            <li>If something feels too perfect or wild to be true, stop and ask: Who made this, and why?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="quiz-section">
+      <div class="container">
+        <div class="quiz-card">
+          <div class="quiz-title">Quiz: That's Cap (Screenshots Lie)</div>
+          <div class="quiz-progress-bar"><div class="quiz-progress"></div></div>
+          <div id="quiz-question-card" class="quiz-question-card"></div>
+          <div class="quiz-controls">
+            <button id="next-btn" class="button-accent" style="display:none;">Next</button>
+          </div>
+          <div id="quiz-result" class="quiz-result-card"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Custom quiz data for Lesson 4
+    window.quizData = [
+      {
+        question: "What's one clue a screenshot might be fake?",
+        options: [
+          "It's from a famous person",
+          "The font looks off or there's no real source",
+          "It has a lot of comments"
+        ],
+        answer: 1
+      },
+      {
+        question: "Which of these is a common flaw in AI-generated images?",
+        options: [
+          "Bad lighting",
+          "Strange-looking hands or backgrounds",
+          "Black and white coloring"
+        ],
+        answer: 1
+      },
+      {
+        question: "What's a deepfake?",
+        options: [
+          "A joke video",
+          "A real video edited for fun",
+          "A fake video that uses AI to make someone look like they said or did something they didn't"
+        ],
+        answer: 2
+      },
+      {
+        question: "If a video is going viral, it means it's probably true.",
+        options: [
+          "True",
+          "False"
+        ],
+        answer: 1
+      }
+    ];
+  </script>
+  <script src="script.js"></script>
+</body>
+</html> 

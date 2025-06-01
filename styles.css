@@ -889,8 +889,9 @@ h1 {
 }
 
 .lesson-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(89, 169, 106, 0.1);
+    /* Remove transform and box-shadow on hover */
+    transform: none;
+    box-shadow: none;
     border-color: var(--accent-color);
 }
 

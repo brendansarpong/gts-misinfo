@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lessons Demo - Project Prometheus</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <style>
+    .demo-lesson-section {
+      background: var(--accent-color-lighter);
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 24px rgba(13,53,28,0.07);
+      margin: var(--spacing-lg) 0;
+      padding: var(--spacing-lg) var(--spacing-md);
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .demo-lesson-header {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--accent-color);
+      margin-bottom: var(--spacing-md);
+      font-family: 'Fraunces', serif;
+      letter-spacing: -0.02em;
+    }
+    .demo-lesson-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-color-dark);
+      margin-top: var(--spacing-md);
+      margin-bottom: 0.5rem;
+      font-family: 'Fraunces', serif;
+    }
+    .demo-lesson-content ul {
+      margin-bottom: 1.5rem;
+      color: var(--text-secondary);
+    }
+    .demo-lesson-content hr {
+      border: none;
+      border-top: 2px solid var(--accent-color-light);
+      margin: 2rem 0;
+    }
+    .demo-lesson-number {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      font-size: 4rem;
+      color: var(--accent-color-light);
+      font-weight: 900;
+      opacity: 0.15;
+      pointer-events: none;
+      user-select: none;
+    }
+    @media (max-width: 600px) {
+      .demo-lesson-section { padding: var(--spacing-md) var(--spacing-sm); }
+      .demo-lesson-header { font-size: 1.5rem; }
+      .demo-lesson-number { font-size: 2.5rem; right: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <a href="index.html" class="logo">Project Prometheus</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="lessons.html">Lessons</a>
+        <a href="methodology.html">Methodology</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section style="text-align:center; margin-top: 4rem;">
+      <h1 class="fade-in" style="font-size:3.5rem; font-family:'Fraunces',serif; color:var(--accent-color-dark);">Lessons Demo</h1>
+      <p class="section-intro fade-in" style="max-width:700px; margin:1.5rem auto 0;">A showcase of the first four lessons from Project Prometheus. Each lesson is presented in a modern, visually engaging format for demonstration purposes.</p>
+    </section>
+
+    <!-- Lesson 1 -->
+    <section class="demo-lesson-section fade-in">
+      <div class="demo-lesson-number">01</div>
+      <div class="demo-lesson-header">What Is Misinformation, Really?</div>
+      <div class="demo-lesson-content">
+        <div class="demo-lesson-title">Terms That Actually Mean Things</div>
+        <ul>
+          <li><b>Misinformation</b> = false info shared without knowing it's false</li>
+          <li><b>Disinformation</b> = false info shared on purpose</li>
+          <li><b>Malinformation</b> = real info, but shared in a harmful or misleading way</li>
+        </ul>
+        <div class="demo-lesson-title">Examples</div>
+        <ul>
+          <li><b>Misinformation:</b> Your aunt sharing a fake vaccine stat she saw online</li>
+          <li><b>Disinformation:</b> A troll farm posting fake election results to confuse people</li>
+          <li><b>Malinformation:</b> Leaking someone's private texts to ruin their rep</li>
+        </ul>
+        <hr>
+        <div class="demo-lesson-title">Why It Spreads So Fast</div>
+        <ul>
+          <li>People love stuff that confirms what they already believe</li>
+          <li>"Lies run the world before truth can tie its shoes" - Rapsody</li>
+          <li>Anger, shock, or fear = more clicks, more shares</li>
+          <li>Most people don't pause to fact-check, especially if it feels true</li>
+        </ul>
+        <hr>
+        <div class="demo-lesson-title">Why It Matters</div>
+        <ul>
+          <li>Decisions (votes, health, school safety) get made based on bad info</li>
+          <li>Misinformation isn't just annoying—it can be dangerous</li>
+          <li>Understanding the why behind false info is the first step to resisting it</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Lesson 2 -->
+    <section class="demo-lesson-section fade-in">
+      <div class="demo-lesson-number">02</div>
+      <div class="demo-lesson-header">The Algorithm Doesn't Love You</div>
+      <div class="demo-lesson-content">
+        <div class="demo-lesson-title">Algorithms Are Not Your Friend</div>
+        <ul>
+          <li>Social media sites make money from your attention</li>
+          <li>They show you content you're most likely to click, not what's most accurate</li>
+          <li>That's why you'll see drama and controversy before facts</li>
+        </ul>
+        <hr>
+        <div class="demo-lesson-title">The Feedback Loop</div>
+        <ul>
+          <li>You like one conspiracy video → you get more</li>
+          <li>Your feed isn't reality—it's a reflection of what the app thinks you like</li>
+          <li>It's easy to end up in a loop of extreme or false content</li>
+        </ul>
+        <hr>
+        <div class="demo-lesson-title">Take Back Control</div>
+        <ul>
+          <li>Turn off autoplay</li>
+          <li>Follow people who challenge your views</li>
+          <li>Use search engines, not just feeds, to find info</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Lesson 3 -->
+    <section class="demo-lesson-section fade-in">
+      <div class="demo-lesson-number">03</div>
+      <div class="demo-lesson-header">Follow the Money</div>
+      <div class="demo-lesson-content">
+        <div class="demo-lesson-title">The Media Has Bills Too</div>
+        <ul>
+          <li>News sites make money from ads, subscriptions, or products</li>
+          <li>That means their content can be shaped by what gets clicks or sells</li>
+        </ul>
+        <hr>
+        <div class="demo-lesson-title">Real Examples</div>
+        <ul>
+          <li>The Daily Wire pushes outrage because it sells memberships</li>
+          <li>Steven Crowder jokes while selling merch (those mugs aren't free)</li>
+          <li>The Washington Post? Owned by Jeff Bezos, CEO of Amazon</li>
+        </ul>
+        <hr>
+        <div class="demo-lesson-title">What to Look For</div>
+        <ul>
+          <li>Who owns the site?</li>
+          <li>What's being sold—ads, products, an idea?</li>
+          <li>Do they benefit if you believe them?</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Lesson 4 -->
+    <section class="demo-lesson-section fade-in">
+      <div class="demo-lesson-number">04</div>
+      <div class="demo-lesson-header">That's Cap (Screenshots Lie)</div>
+      <div class="demo-lesson-content">
+        <div class="demo-lesson-title">Screenshots, Deepfakes, and AI—Oh My</div>
+        <ul>
+          <li>Anyone can fake a screenshot using free tools. It's super easy.</li>
+          <li>But now we've also got AI-generated images and deepfake videos that can show people saying or doing things they never did.</li>
+          <li>It looks real. It spreads fast. It's often fake.</li>
+        </ul>
+        <div class="demo-lesson-title">Example</div>
+        <ul>
+          <li>A fake image of the Pope in a designer puffer coat went viral before people realized it was made with AI. Same with fake videos of celebrities or politicians saying things they never said.</li>
+        </ul>
+        <hr>
+        <div class="demo-lesson-title">Spot the Fakes</div>
+        <ul>
+          <li>Screenshots: Blurry? Weird font? No link to the real post? Red flags.</li>
+          <li>AI images: Look for messed up hands, too-perfect faces, weird backgrounds, or text that looks like gibberish.</li>
+          <li>Videos: If a video seems off, check the source—deepfakes often spread without context or come from shady accounts.</li>
+        </ul>
+        <div class="demo-lesson-title">Tip</div>
+        <ul>
+          <li>Reverse image search. Tools like Google Lens or InVID (for videos) can help check where a file came from.</li>
+        </ul>
+        <hr>
+        <div class="demo-lesson-title">What You Can Do</div>
+        <ul>
+          <li>Don't trust a post just because it has a picture or video.</li>
+          <li>Always look for a real source—can you find it on a trusted site, or is it only showing up on Twitter/X or TikTok?</li>
+          <li>If something feels too perfect or wild to be true, stop and ask: Who made this, and why?</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html> 

@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lesson 1 Quiz - Project Prometheus</title>
+  <title>Lesson 1: What Is Misinformation, Really? - Project Prometheus</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://rsms.me/">
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <nav>
@@ -21,27 +22,111 @@
   </nav>
 
   <main>
-    <section class="quiz-section fade-slide-up">
+    <section class="lesson-section">
+      <div class="container">
+        <h1 class="fade-in">Lesson 1: What Is Misinformation, Really?</h1>
+        <div class="lesson-content fade-in">
+          <h2>Terms That Actually Mean Things</h2>
+          <ul>
+            <li><b>Misinformation</b> = false info shared without knowing it's false</li>
+            <li><b>Disinformation</b> = false info shared on purpose</li>
+            <li><b>Malinformation</b> = real info, but shared in a harmful or misleading way</li>
+          </ul>
+          <p><b>Examples:</b></p>
+          <ul>
+            <li><b>Misinformation:</b> Your aunt sharing a fake vaccine stat she saw online</li>
+            <li><b>Disinformation:</b> A troll farm posting fake election results to confuse people</li>
+            <li><b>Malinformation:</b> Leaking someone's private texts to ruin their rep</li>
+          </ul>
+          <hr>
+          <h2>Why It Spreads So Fast</h2>
+          <ul>
+            <li>People love stuff that confirms what they already believe</li>
+            <li>"Lies run the world before truth can tie its shoes" - Rapsody</li>
+            <li>Anger, shock, or fear = more clicks, more shares</li>
+            <li>Most people don't pause to fact-check, especially if it feels true</li>
+          </ul>
+          <hr>
+          <h2>Why It Matters</h2>
+          <ul>
+            <li>Decisions (votes, health, school safety) get made based on bad info</li>
+            <li>Misinformation isn't just annoying—it can be dangerous</li>
+            <li>Understanding the why behind false info is the first step to resisting it</li>
+          </ul>
+        </div>
+        <div style="text-align:center; margin: 2rem 0;">
+          <button id="show-quiz-btn" class="button-accent" style="font-size:1.2rem; padding:1rem 2.5rem;">Continue to Quiz</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="quiz-section" id="quiz-section" style="display:none;">
       <div class="container">
         <div class="quiz-card">
-          <div class="quiz-progress-bar">
-            <div class="quiz-progress"></div>
+          <div class="quiz-title">Quiz: What Is Misinformation, Really?</div>
+          <div class="quiz-progress-bar"><div class="quiz-progress"></div></div>
+          <div id="quiz-question-card" class="quiz-question-card"></div>
+          <div class="quiz-controls">
+            <button id="next-btn" class="button-accent" style="display:none;">Next</button>
           </div>
-          <div class="quiz-content">
-            <h1 class="quiz-title">Lesson 1: Quiz</h1>
-            <div id="quiz-question-card" class="quiz-question-card">
-              <!-- JS will inject question here -->
-            </div>
-            <div class="quiz-controls">
-              <button id="next-btn" class="button-accent" style="display:none;">Next</button>
-            </div>
-            <div id="quiz-result" class="quiz-result-card" style="display:none;"></div>
-          </div>
+          <div id="quiz-result" class="quiz-result-card"></div>
         </div>
       </div>
     </section>
   </main>
 
+  <script>
+    // Custom quiz data for Lesson 1
+    window.quizData = [
+      {
+        question: "What's the difference between misinformation and disinformation?",
+        options: [
+          "There is no difference",
+          "One is accidental, the other is on purpose",
+          "Misinformation is about politics only"
+        ],
+        answer: 1
+      },
+      {
+        question: "Which of these is malinformation?",
+        options: [
+          "A satire post",
+          "Sharing someone's private DMs to embarrass them",
+          "Accidentally reposting a fake article"
+        ],
+        answer: 1
+      },
+      {
+        question: "What emotion helps misinformation spread fastest?",
+        options: [
+          "Boredom",
+          "Surprise",
+          "Anger"
+        ],
+        answer: 2
+      },
+      {
+        question: "Misinformation can still be harmful, even if someone didn't mean to share false info.",
+        options: [
+          "True",
+          "False"
+        ],
+        answer: 0
+      }
+    ];
+    // Show quiz on button click
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('show-quiz-btn');
+      var quizSection = document.getElementById('quiz-section');
+      if (btn && quizSection) {
+        btn.addEventListener('click', function() {
+          quizSection.style.display = '';
+          btn.style.display = 'none';
+          window.scrollTo({ top: quizSection.offsetTop - 40, behavior: 'smooth' });
+        });
+      }
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 </html> 

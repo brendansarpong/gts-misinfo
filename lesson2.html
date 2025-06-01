@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lesson 2: The Algorithm Doesn't Love You - Project Prometheus</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <a href="index.html" class="logo">Project Prometheus</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="lessons.html">Lessons</a>
+        <a href="methodology.html">Methodology</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="lesson-section">
+      <div class="container">
+        <h1 class="fade-in">Lesson 2: The Algorithm Doesn't Love You</h1>
+        <div class="lesson-content fade-in">
+          <h2>Algorithms Are Not Your Friend</h2>
+          <ul>
+            <li>Social media sites make money from your attention</li>
+            <li>They show you content you're most likely to click, not what's most accurate</li>
+            <li>That's why you'll see drama and controversy before facts</li>
+          </ul>
+          <hr>
+          <h2>The Feedback Loop</h2>
+          <ul>
+            <li>You like one conspiracy video → you get more</li>
+            <li>Your feed isn't reality—it's a reflection of what the app thinks you like</li>
+            <li>It's easy to end up in a loop of extreme or false content</li>
+          </ul>
+          <hr>
+          <h2>Take Back Control</h2>
+          <ul>
+            <li>Turn off autoplay</li>
+            <li>Follow people who challenge your views</li>
+            <li>Use search engines, not just feeds, to find info</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="quiz-section">
+      <div class="container">
+        <div class="quiz-card">
+          <div class="quiz-title">Quiz: The Algorithm Doesn't Love You</div>
+          <div class="quiz-progress-bar"><div class="quiz-progress"></div></div>
+          <div id="quiz-question-card" class="quiz-question-card"></div>
+          <div class="quiz-controls">
+            <button id="next-btn" class="button-accent" style="display:none;">Next</button>
+          </div>
+          <div id="quiz-result" class="quiz-result-card"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Custom quiz data for Lesson 2
+    window.quizData = [
+      {
+        question: "What do platforms like TikTok and YouTube want most from users?",
+        options: [
+          "To keep you informed",
+          "To make you laugh",
+          "To keep you watching"
+        ],
+        answer: 2
+      },
+      {
+        question: "What happens when you interact with one type of content?",
+        options: [
+          "You stop seeing it",
+          "The platform shows you more of it",
+          "You get banned"
+        ],
+        answer: 1
+      },
+      {
+        question: "Algorithms show you the most truthful information first.",
+        options: [
+          "True",
+          "False"
+        ],
+        answer: 1
+      },
+      {
+        question: "What's one way to break the algorithm's influence?",
+        options: [
+          "Delete your account",
+          "Only use one app",
+          "Follow people with different opinions"
+        ],
+        answer: 2
+      }
+    ];
+  </script>
+  <script src="script.js"></script>
+</body>
+</html> 

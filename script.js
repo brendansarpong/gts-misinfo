@@ -146,7 +146,8 @@ function fadeSlideUpOnLoad() {
 window.addEventListener('DOMContentLoaded', fadeSlideUpOnLoad);
 
 // Quiz logic for lesson1.html
-const quizData = [
+// Use window.quizData if defined, otherwise use the default quizData
+const defaultQuizData = [
   {
     question: "What is the capital of France?",
     options: ["Berlin", "Paris", "London", "Madrid"],
@@ -168,6 +169,8 @@ const quizData = [
     answer: 1
   }
 ];
+
+const quizData = window.quizData || defaultQuizData;
 
 function shuffle(array) {
   let currentIndex = array.length, randomIndex;
