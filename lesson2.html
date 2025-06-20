@@ -3,11 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lesson 2: The Algorithm Doesn't Love You - Project Prometheus</title>
+  <title>Lesson 2: Sponsor Hunt - Project Prometheus</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <style>
+    .activity-section {
+      background: var(--accent-color-lighter);
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 24px rgba(13,53,28,0.07);
+      margin: var(--spacing-lg) 0;
+      padding: var(--spacing-lg) var(--spacing-md);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .activity-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-color-dark);
+      margin-bottom: 1rem;
+      font-family: 'Fraunces', serif;
+    }
+    .activity-video {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 1.5rem auto;
+      display: block;
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 12px rgba(13,53,28,0.10);
+      background: #000;
+    }
+    .activity-input {
+      width: 100%;
+      padding: 1rem;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--accent-color-light);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      margin-top: 0.5rem;
+    }
+    .activity-btn {
+      background: var(--accent-color);
+      color: #fff;
+      border: none;
+      border-radius: var(--border-radius);
+      padding: 0.75rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-bottom: 1rem;
+    }
+    .activity-btn:hover {
+      background: var(--accent-color-dark);
+    }
+    .activity-answer {
+      background: var(--accent-color-light);
+      border-radius: var(--border-radius);
+      padding: 1.25rem;
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      box-shadow: 0 2px 8px rgba(13,53,28,0.08);
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <nav>
@@ -16,95 +80,54 @@
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="lessons.html">Lessons</a>
+        <a href="lessons-demo.html">Lesson Demo</a>
         <a href="methodology.html">Methodology</a>
       </div>
     </div>
   </nav>
 
   <main>
-    <section class="lesson-section">
-      <div class="container">
-        <h1 class="fade-in">Lesson 2: The Algorithm Doesn't Love You</h1>
-        <div class="lesson-content fade-in">
-          <h2>Algorithms Are Not Your Friend</h2>
-          <ul>
-            <li>Social media sites make money from your attention</li>
-            <li>They show you content you're most likely to click, not what's most accurate</li>
-            <li>That's why you'll see drama and controversy before facts</li>
-          </ul>
-          <hr>
-          <h2>The Feedback Loop</h2>
-          <ul>
-            <li>You like one conspiracy video → you get more</li>
-            <li>Your feed isn't reality—it's a reflection of what the app thinks you like</li>
-            <li>It's easy to end up in a loop of extreme or false content</li>
-          </ul>
-          <hr>
-          <h2>Take Back Control</h2>
-          <ul>
-            <li>Turn off autoplay</li>
-            <li>Follow people who challenge your views</li>
-            <li>Use search engines, not just feeds, to find info</li>
+    <section style="margin-top: 96px;">
+      <div class="container" style="max-width: 700px; margin: 0 auto;">
+        <h1 style="margin-bottom: 2rem;">Lesson 2: <span style="color: var(--accent-color);">Sponsor Hunt</span></h1>
+        <div class="lesson-body" style="font-size: 1.2rem;">
+          <ul style="list-style: disc inside; margin-bottom: 2rem;">
+            <li style="margin-bottom: 1rem;">A lot of content is trying to influence you, but not always in obvious ways.</li>
+            <li style="margin-bottom: 1rem;">Influencers, news sites, YouTubers, even meme pages often have sponsors, products, or agendas behind what they say. Washington Post, for example, is owned by Jeff Bezos, billionaire co-founder of Amazon.</li>
+            <li style="margin-bottom: 1rem;">That doesn't always make the content bad. After all, everybody's gotta put food on the table somehow. Just take a second and ask yourself some questions. Who benefits if I believe this? How do this person's financial incentives influence how/why they're sharing this? What are the motives of the people investing in this?</li>
+            <li style="margin-bottom: 1rem;">Just because media companies in the US aren't government owned doesn't mean that they're always unbiased. They're still beholden to advertiser revenue, sponsorships, etc., meaning that their coverage can be skewed. This is especially true for online content creators, whose revenue often comes exclusively from ad revenue.</li>
+            <li style="margin-bottom: 1rem;">In this lesson, we'll dig into how to spot sponsorships, brand deals, or hidden motivations behind content.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="quiz-section">
-      <div class="container">
-        <div class="quiz-card">
-          <div class="quiz-title">Quiz: The Algorithm Doesn't Love You</div>
-          <div class="quiz-progress-bar"><div class="quiz-progress"></div></div>
-          <div id="quiz-question-card" class="quiz-question-card"></div>
-          <div class="quiz-controls">
-            <button id="next-btn" class="button-accent" style="display:none;">Next</button>
-          </div>
-          <div id="quiz-result" class="quiz-result-card"></div>
-        </div>
+    <section class="activity-section">
+      <div class="activity-title">💸 Activity: Watch & Identify</div>
+      <video class="activity-video" controls poster="" preload="metadata">
+        <source src="videos/steven crowder clip THIS IS FOR RESEARCH.mp4" type="video/mp4">
+        Sorry, your browser does not support embedded videos.
+      </video>
+      <div style="margin-bottom: 1rem; font-size:1.1rem;">What do you think the financial incentive is in this video? (Type your answer below!)</div>
+      <input type="text" class="activity-input" id="user-incentive" placeholder="Type your answer here..." autocomplete="off" />
+      <button class="activity-btn" id="reveal-answer">Reveal Answer</button>
+      <div class="activity-answer" id="activity-answer">
+        <b>Correct Answer & Explanation:</b><br>
+        The video snippet is from Steven Crowder, a right wing YouTuber and self-proclaimed libertarian conservative known for his "Change My Mind" series of videos. He has a subscription-based media network called "Mug Club" where users can pay for conservative podcasts, videos, and more. He is also partnered with Rumble, which is another source of revenue. See the merch he has on his desk?
       </div>
     </section>
+
+    <div class="quiz-nav-btns" style="display: flex; justify-content: space-between; max-width: 700px; margin: 2rem auto 0 auto;">
+      <a href="lesson1.html" class="quiz-nav-btn" style="background: var(--accent-color); color: #fff; border: none; border-radius: var(--border-radius); padding: 0.75rem 2.5rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">&larr; Back</a>
+      <a href="lesson3.html" class="quiz-nav-btn" style="background: var(--accent-color); color: #fff; border: none; border-radius: var(--border-radius); padding: 0.75rem 2.5rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">Next &rarr;</a>
+    </div>
   </main>
 
   <script>
-    // Custom quiz data for Lesson 2
-    window.quizData = [
-      {
-        question: "What do platforms like TikTok and YouTube want most from users?",
-        options: [
-          "To keep you informed",
-          "To make you laugh",
-          "To keep you watching"
-        ],
-        answer: 2
-      },
-      {
-        question: "What happens when you interact with one type of content?",
-        options: [
-          "You stop seeing it",
-          "The platform shows you more of it",
-          "You get banned"
-        ],
-        answer: 1
-      },
-      {
-        question: "Algorithms show you the most truthful information first.",
-        options: [
-          "True",
-          "False"
-        ],
-        answer: 1
-      },
-      {
-        question: "What's one way to break the algorithm's influence?",
-        options: [
-          "Delete your account",
-          "Only use one app",
-          "Follow people with different opinions"
-        ],
-        answer: 2
-      }
-    ];
+    document.getElementById('reveal-answer').addEventListener('click', function() {
+      document.getElementById('activity-answer').style.display = 'block';
+      this.disabled = true;
+    });
   </script>
-  <script src="script.js"></script>
 </body>
 </html> 

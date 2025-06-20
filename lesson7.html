@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lesson 7: Substantiate the Tweet - Project Prometheus</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <style>
+    .activity-section {
+      background: var(--accent-color-lighter);
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 24px rgba(13,53,28,0.07);
+      margin: var(--spacing-lg) 0;
+      padding: var(--spacing-lg) var(--spacing-md);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .activity-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-color-dark);
+      margin-bottom: 1rem;
+      font-family: 'Fraunces', serif;
+    }
+    .tweet-img {
+      width: 100%;
+      max-width: 500px;
+      display: block;
+      margin: 0 auto 1.5rem auto;
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 12px rgba(13,53,28,0.10);
+      background: #fff;
+    }
+    .verdict-options {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .verdict-radio {
+      accent-color: var(--accent-color);
+      margin-right: 0.5rem;
+    }
+    .activity-input {
+      width: 100%;
+      padding: 1rem;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--accent-color-light);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      margin-top: 0.5rem;
+    }
+    .activity-btn {
+      background: var(--accent-color);
+      color: #fff;
+      border: none;
+      border-radius: var(--border-radius);
+      padding: 0.75rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-bottom: 1rem;
+    }
+    .activity-btn:hover {
+      background: var(--accent-color-dark);
+    }
+    .activity-links {
+      background: var(--accent-color-light);
+      border-radius: var(--border-radius);
+      padding: 1.25rem;
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      box-shadow: 0 2px 8px rgba(13,53,28,0.08);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <a href="index.html" class="logo">Project Prometheus</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="lessons.html">Lessons</a>
+        <a href="lessons-demo.html">Lesson Demo</a>
+        <a href="methodology.html">Methodology</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section style="margin-top: 96px;">
+      <div class="container" style="max-width: 700px; margin: 0 auto;">
+        <h1 style="margin-bottom: 2rem;">Lesson 7: <span style="color: var(--accent-color);">Substantiate the Tweet</span></h1>
+        <div class="lesson-body" style="font-size: 1.2rem;">
+          <ul style="list-style: disc inside; margin-bottom: 2rem;">
+            <li style="margin-bottom: 1rem;">Anyone can post a screenshot that looks real, or even fake a tweet entirely. It took me all of 2 seconds to find a fake tweet generator online.</li>
+            <li style="margin-bottom: 1rem;">It's all about verifying. That extra minute you take to check if something is valid will leave you more informed than most.</li>
+            <li style="margin-bottom: 1rem;">In this lesson, you'll learn how to:</li>
+            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+              <li>Reverse search images or text</li>
+              <li>Look for original sources</li>
+              <li>Decide whether a claim is real, fake, or just taken out of context</li>
+            </ul>
+            <li style="margin-bottom: 1rem;">This kind of "investigation" is how journalists and fact-checkers separate truth from noise.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="activity-section">
+      <div class="activity-title">🕵️‍♂️ Fake Tweet Analyzer</div>
+      <img src="Tweets/faketweet_LAriots.png" alt="Fake Tweet Example" class="tweet-img" id="tweet-img" />
+      <div class="verdict-options" id="verdict-options">
+        <label><input type="radio" name="verdict" value="real" class="verdict-radio"> Real</label>
+        <label><input type="radio" name="verdict" value="fake" class="verdict-radio"> Fake</label>
+        <label><input type="radio" name="verdict" value="misleading" class="verdict-radio"> Misleading</label>
+      </div>
+      <input type="text" class="activity-input" id="user-reason" placeholder="Why? Type your reasoning here..." autocomplete="off" />
+      <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+        <button class="activity-btn" id="prev-tweet" style="background: var(--accent-color-light); color: var(--accent-color-dark);">Previous Tweet</button>
+        <button class="activity-btn" id="next-tweet" style="background: var(--accent-color-light); color: var(--accent-color-dark);">Next Tweet</button>
+      </div>
+      <button class="activity-btn" id="submit-verdict">Submit</button>
+      <div class="activity-links" id="factcheck-links" style="display:none;">
+        <b>Want to check more?</b><br>
+        <a href="https://www.snopes.com/" target="_blank" style="color:var(--accent-color);text-decoration:underline;">Snopes.com</a> &nbsp;|&nbsp;
+        <a href="https://www.politifact.com/" target="_blank" style="color:var(--accent-color);text-decoration:underline;">PolitiFact.com</a>
+      </div>
+    </section>
+    <div class="quiz-nav-btns" style="display: flex; justify-content: space-between; max-width: 700px; margin: 2rem auto 0 auto;">
+      <a href="lesson6.html" class="quiz-nav-btn" style="background: var(--accent-color); color: #fff; border: none; border-radius: var(--border-radius); padding: 0.75rem 2.5rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">&larr; Back</a>
+      <a href="lesson8.html" class="quiz-nav-btn" style="background: var(--accent-color); color: #fff; border: none; border-radius: var(--border-radius); padding: 0.75rem 2.5rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">Next &rarr;</a>
+    </div>
+  </main>
+  <script>
+    // Tweet data
+    const tweets = [
+      {
+        src: 'Tweets/faketweet_LAriots.png',
+        alt: 'Fake Tweet Example (LA Riots)',
+      },
+      {
+        src: 'Tweets/faketweet_finland.png',
+        alt: 'Fake Tweet Example (Finland)',
+      },
+      {
+        src: 'Tweets/realtweet.PNG',
+        alt: 'Real Tweet Example (JK Rowling)',
+      }
+    ];
+    let currentTweet = 0;
+    // Store verdicts and reasons per tweet
+    const tweetVerdicts = [null, null, null];
+    const tweetReasons = ["", "", ""];
+
+    function updateTweet() {
+      // Update image
+      const tweetImg = document.getElementById('tweet-img');
+      tweetImg.src = tweets[currentTweet].src;
+      tweetImg.alt = tweets[currentTweet].alt;
+      // Reset or restore verdict
+      const radios = document.querySelectorAll('input[name="verdict"]');
+      radios.forEach(r => {
+        r.checked = false;
+        if (tweetVerdicts[currentTweet] && r.value === tweetVerdicts[currentTweet]) {
+          r.checked = true;
+        }
+      });
+      // Reset or restore reason
+      const reasonInput = document.getElementById('user-reason');
+      reasonInput.value = tweetReasons[currentTweet] || "";
+      // Hide factcheck links and enable submit
+      document.getElementById('factcheck-links').style.display = 'none';
+      document.getElementById('submit-verdict').disabled = false;
+      // Disable prev/next if at ends
+      document.getElementById('prev-tweet').disabled = currentTweet === 0;
+      document.getElementById('next-tweet').disabled = currentTweet === tweets.length - 1;
+    }
+
+    document.getElementById('submit-verdict').addEventListener('click', function() {
+      // Save verdict and reason
+      const radios = document.querySelectorAll('input[name="verdict"]');
+      let selected = null;
+      radios.forEach(r => { if (r.checked) selected = r.value; });
+      const reason = document.getElementById('user-reason').value;
+      tweetVerdicts[currentTweet] = selected;
+      tweetReasons[currentTweet] = reason;
+      document.getElementById('factcheck-links').style.display = 'block';
+      this.disabled = true;
+    });
+
+    document.getElementById('next-tweet').addEventListener('click', function() {
+      if (currentTweet < tweets.length - 1) {
+        currentTweet++;
+        updateTweet();
+      }
+    });
+    document.getElementById('prev-tweet').addEventListener('click', function() {
+      if (currentTweet > 0) {
+        currentTweet--;
+        updateTweet();
+      }
+    });
+
+    // Optional: Reset verdict/radio on input change
+    document.getElementById('user-reason').addEventListener('input', function() {
+      document.getElementById('submit-verdict').disabled = false;
+      document.getElementById('factcheck-links').style.display = 'none';
+    });
+    document.querySelectorAll('input[name="verdict"]').forEach(radio => {
+      radio.addEventListener('change', function() {
+        document.getElementById('submit-verdict').disabled = false;
+        document.getElementById('factcheck-links').style.display = 'none';
+      });
+    });
+
+    // Initialize
+    updateTweet();
+  </script>
+</body>
+</html> 

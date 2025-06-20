@@ -3,11 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lesson 4: That's Cap (Screenshots Lie) - Project Prometheus</title>
+  <title>Lesson 4: AI or IRL? - Project Prometheus</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <style>
+    .activity-section {
+      background: var(--accent-color-lighter);
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 24px rgba(13,53,28,0.07);
+      margin: var(--spacing-lg) 0;
+      padding: var(--spacing-lg) var(--spacing-md);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .activity-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-color-dark);
+      margin-bottom: 1rem;
+      font-family: 'Fraunces', serif;
+    }
+    .image-quiz-card {
+      background: #fff;
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 12px rgba(13,53,28,0.10);
+      padding: 2rem 1rem 1.5rem 1rem;
+      max-width: 420px;
+      margin: 0 auto 2rem auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .image-quiz-card img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: var(--border-radius);
+      margin-bottom: 1.5rem;
+      box-shadow: 0 1px 6px rgba(13,53,28,0.08);
+      background: #eee;
+    }
+    .image-quiz-btns {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .image-quiz-btn {
+      background: var(--accent-color);
+      color: #fff;
+      border: none;
+      border-radius: var(--border-radius);
+      padding: 0.75rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .image-quiz-btn:hover {
+      background: var(--accent-color-dark);
+    }
+    .image-quiz-answer {
+      background: var(--accent-color-light);
+      border-radius: var(--border-radius);
+      padding: 1.25rem;
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      box-shadow: 0 2px 8px rgba(13,53,28,0.08);
+      display: none;
+      text-align: center;
+    }
+    .quiz-nav-btns {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2.5rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .quiz-nav-btn {
+      background: var(--accent-color);
+      color: #fff;
+      border: none;
+      border-radius: var(--border-radius);
+      padding: 0.75rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .quiz-nav-btn:hover {
+      background: var(--accent-color-dark);
+    }
+  </style>
 </head>
 <body>
   <nav>
@@ -16,97 +108,131 @@
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="lessons.html">Lessons</a>
+        <a href="lessons-demo.html">Lesson Demo</a>
         <a href="methodology.html">Methodology</a>
       </div>
     </div>
   </nav>
 
   <main>
-    <section class="lesson-section">
-      <div class="container">
-        <h1 class="fade-in">Lesson 4: That's Cap (Screenshots Lie)</h1>
-        <div class="lesson-content fade-in">
-          <h2>Screenshots, Deepfakes, and AI—Oh My</h2>
-          <ul>
-            <li>Anyone can fake a screenshot using free tools. It's super easy.</li>
-            <li>But now we've also got AI-generated images and deepfake videos that can show people saying or doing things they never did.</li>
-            <li>It looks real. It spreads fast. It's often fake.</li>
-          </ul>
-          <p><b>Example:</b> A fake image of the Pope in a designer puffer coat went viral before people realized it was made with AI. Same with fake videos of celebrities or politicians saying things they never said.</p>
-          <hr>
-          <h2>Spot the Fakes</h2>
-          <ul>
-            <li>Screenshots: Blurry? Weird font? No link to the real post? Red flags.</li>
-            <li>AI images: Look for messed up hands, too-perfect faces, weird backgrounds, or text that looks like gibberish.</li>
-            <li>Videos: If a video seems off, check the source—deepfakes often spread without context or come from shady accounts.</li>
-          </ul>
-          <p><b>Tip:</b> Reverse image search. Tools like Google Lens or InVID (for videos) can help check where a file came from.</p>
-          <hr>
-          <h2>What You Can Do</h2>
-          <ul>
-            <li>Don't trust a post just because it has a picture or video.</li>
-            <li>Always look for a real source—can you find it on a trusted site, or is it only showing up on Twitter/X or TikTok?</li>
-            <li>If something feels too perfect or wild to be true, stop and ask: Who made this, and why?</li>
+    <section style="margin-top: 96px;">
+      <div class="container" style="max-width: 700px; margin: 0 auto;">
+        <h1 style="margin-bottom: 2rem;">Lesson 4: <span style="color: var(--accent-color);">AI or IRL?</span></h1>
+        <div class="lesson-body" style="font-size: 1.2rem;">
+          <ul style="list-style: disc inside; margin-bottom: 2rem;">
+            <li style="margin-bottom: 1rem;">AI is getting incredibly impressive at making convincing content. So much so that, by the time this gets uploaded, these tips might be outdated. Regardless, as of right now, these tips are pretty solid for catching flaky AI pics.</li>
+            <li style="margin-bottom: 1rem;">Check the hands, faces, and symmetry. AI often messes up fingers, facial features, or creates mismatched earrings and logos.</li>
+            <li style="margin-bottom: 1rem;">Look for background glitches. Things might blur together, melt into each other, or have unrealistic depth or perspective.</li>
+            <li style="margin-bottom: 1rem;">Watch for lighting and texture issues. Shadows may fall in the wrong direction, and skin might look unnaturally smooth or plastic-like. A lot of times AI makes things look too perfect or cinematic.</li>
+            <li style="margin-bottom: 1rem;">Zoom in on text and sources—AI struggles with readable text on signs or shirts, and reverse image searches often lead nowhere.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="quiz-section">
-      <div class="container">
-        <div class="quiz-card">
-          <div class="quiz-title">Quiz: That's Cap (Screenshots Lie)</div>
-          <div class="quiz-progress-bar"><div class="quiz-progress"></div></div>
-          <div id="quiz-question-card" class="quiz-question-card"></div>
-          <div class="quiz-controls">
-            <button id="next-btn" class="button-accent" style="display:none;">Next</button>
-          </div>
-          <div id="quiz-result" class="quiz-result-card"></div>
-        </div>
-      </div>
+    <section class="activity-section">
+      <div class="activity-title">🧠 Image Flip Quiz</div>
+      <div id="image-quiz-container"></div>
     </section>
+    <div class="quiz-nav-btns">
+      <a href="lesson3.html" class="quiz-nav-btn">&larr; Back</a>
+      <a href="lesson5.html" class="quiz-nav-btn">Next &rarr;</a>
+    </div>
   </main>
 
   <script>
-    // Custom quiz data for Lesson 4
-    window.quizData = [
+    // Quiz data: image, answer, and blurb
+    const quizImages = [
       {
-        question: "What's one clue a screenshot might be fake?",
-        options: [
-          "It's from a famous person",
-          "The font looks off or there's no real source",
-          "It has a lot of comments"
-        ],
-        answer: 1
+        src: 'AI_Images/city_real.PNG',
+        answer: 'real',
+        blurb: 'This is a real photo. Notice the natural lighting, realistic details, and no obvious digital artifacts.'
       },
       {
-        question: "Which of these is a common flaw in AI-generated images?",
-        options: [
-          "Bad lighting",
-          "Strange-looking hands or backgrounds",
-          "Black and white coloring"
-        ],
-        answer: 1
+        src: 'AI_Images/birthday_cake_fake.PNG',
+        answer: 'ai',
+        blurb: 'This is AI-generated. Tricky, I know. Look at the lighting and colors. AI programs often go for a glossy, hyper-cinematic look.'
       },
       {
-        question: "What's a deepfake?",
-        options: [
-          "A joke video",
-          "A real video edited for fun",
-          "A fake video that uses AI to make someone look like they said or did something they didn't"
-        ],
-        answer: 2
+        src: 'AI_Images/face fake.png',
+        answer: 'ai',
+        blurb: 'This is AI-generated, straight from thispersondoesnotexist.com. Note the framing of the photo. To be honest, this is mostly pattern recognition - take note of the specific framing and lighting. Twitter trolls love these.'
       },
       {
-        question: "If a video is going viral, it means it's probably true.",
-        options: [
-          "True",
-          "False"
-        ],
-        answer: 1
+        src: 'AI_Images/field_image_real.PNG',
+        answer: 'real',
+        blurb: 'This is a real photo. The grass, sky, and lighting all look natural. That big face is also a real monument!'
+      },
+      {
+        src: 'AI_Images/Kids-doing-art_fake.jpg',
+        answer: 'ai',
+        blurb: 'This is AI-generated. Check out the odd hand shapes, strange art supplies, or weird background details (that poor kid in the back) Also, the wall looks like a mess.'
+      },
+      {
+        src: 'AI_Images/kids doing art_real.jpg',
+        answer: 'real',
+        blurb: 'This is a real photo. The kids, art, and background all look natural and consistent.'
+      },
+      {
+        src: 'AI_Images/Mt-Fuji_fake.jpg',
+        answer: 'ai',
+        blurb: 'This is AI-generated. The mountain and sky look a bit too perfect and cinematic.'
+      },
+      {
+        src: 'AI_Images/Mount-Fuji_real.jpg',
+        answer: 'real',
+        blurb: 'This is a real photo. The details and lighting are consistent with a real landscape.'
       }
     ];
+
+    let currentQuiz = 0;
+
+    function renderQuizCard(idx) {
+      const q = quizImages[idx];
+      const container = document.getElementById('image-quiz-container');
+      let nextBtnHtml = '';
+      if (idx < quizImages.length - 1) {
+        nextBtnHtml = `<button class=\"image-quiz-btn\" id=\"next-image-btn\" style=\"margin-top:1.5rem;\">Next Image &rarr;</button>`;
+      } else {
+        nextBtnHtml = `<div style=\"margin-top:1.5rem; color:var(--accent-color-dark); font-weight:600;\">Quiz complete!</div>`;
+      }
+      container.innerHTML = `
+        <div class=\"image-quiz-card\">\n          <img src=\"${q.src}\" alt=\"Quiz Image\" />\n          <div class=\"image-quiz-btns\">\n            <button class=\"image-quiz-btn\" data-guess=\"real\">Real</button>\n            <button class=\"image-quiz-btn\" data-guess=\"ai\">AI-generated</button>\n          </div>\n          <div class=\"image-quiz-answer\" id=\"quiz-answer\"></div>\n          ${nextBtnHtml}
+        </div>\n      `;
+      document.querySelectorAll('.image-quiz-btn[data-guess]').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const guess = this.getAttribute('data-guess');
+          const answerDiv = document.getElementById('quiz-answer');
+          if (guess === q.answer) {
+            answerDiv.innerHTML = `<b>Correct!</b> ${q.blurb}`;
+            answerDiv.style.background = 'var(--accent-color-light)';
+            answerDiv.style.color = 'var(--text-primary)';
+          } else {
+            answerDiv.innerHTML = `<b>Not quite.</b> ${q.blurb}`;
+            answerDiv.style.background = '#ffe7e4';
+            answerDiv.style.color = '#b00020';
+          }
+          answerDiv.style.display = 'block';
+          document.querySelectorAll('.image-quiz-btn[data-guess]').forEach(b => b.disabled = true);
+          const nextBtn = document.getElementById('next-image-btn');
+          if (nextBtn) {
+            nextBtn.disabled = false;
+          }
+        });
+      });
+      const nextBtn = document.getElementById('next-image-btn');
+      if (nextBtn) {
+        nextBtn.disabled = true;
+        nextBtn.addEventListener('click', function() {
+          if (currentQuiz < quizImages.length - 1) {
+            currentQuiz++;
+            renderQuizCard(currentQuiz);
+          }
+        });
+      }
+    }
+
+    renderQuizCard(currentQuiz);
   </script>
-  <script src="script.js"></script>
 </body>
 </html> 

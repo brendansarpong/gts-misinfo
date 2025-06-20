@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lesson 5: Algorithm Adventures - Project Prometheus</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <style>
+    .activity-section {
+      background: var(--accent-color-lighter);
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 24px rgba(13,53,28,0.07);
+      margin: var(--spacing-lg) 0;
+      padding: var(--spacing-lg) var(--spacing-md);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .activity-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-color-dark);
+      margin-bottom: 1rem;
+      font-family: 'Fraunces', serif;
+    }
+    .topic-cards {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .topic-card {
+      background: #fff;
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 12px rgba(13,53,28,0.10);
+      padding: 2rem 1.5rem;
+      min-width: 180px;
+      max-width: 220px;
+      flex: 1 1 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      transition: box-shadow 0.2s, transform 0.2s;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent-color-dark);
+      border: 2px solid transparent;
+    }
+    .topic-card:hover, .topic-card.selected {
+      box-shadow: 0 4px 20px rgba(13,53,28,0.15);
+      border: 2px solid var(--accent-color);
+      transform: translateY(-4px) scale(1.04);
+      background: var(--accent-color-light);
+    }
+    .feed-section {
+      margin-top: 2rem;
+      display: none;
+      animation: fadeInFeed 0.5s;
+    }
+    .feed-section.active {
+      display: block;
+    }
+    @keyframes fadeInFeed {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .feed-mock {
+      background: #fff;
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 12px rgba(13,53,28,0.10);
+      padding: 1.5rem 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      font-family: 'Rubik', sans-serif;
+    }
+    .feed-mock .feed-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      margin-bottom: 0.5rem;
+    }
+    .feed-mock .feed-post {
+      margin-bottom: 1.1rem;
+      padding-bottom: 0.7rem;
+      border-bottom: 1px solid var(--accent-color-light);
+    }
+    .feed-mock .feed-post:last-child {
+      border-bottom: none;
+    }
+    .switch-btn {
+      background: var(--accent-color);
+      color: #fff;
+      border: none;
+      border-radius: var(--border-radius);
+      padding: 0.75rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin: 1.5rem auto 0 auto;
+      display: block;
+    }
+    .switch-btn:hover {
+      background: var(--accent-color-dark);
+    }
+    .quiz-nav-btns {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2.5rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .quiz-nav-btn {
+      background: var(--accent-color);
+      color: #fff;
+      border: none;
+      border-radius: var(--border-radius);
+      padding: 0.75rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .quiz-nav-btn:hover {
+      background: var(--accent-color-dark);
+    }
+    .feed-mock .feed-thumb {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      box-shadow: 0 1px 6px rgba(13,53,28,0.08);
+      background: #eee;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <a href="index.html" class="logo">Project Prometheus</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="lessons.html">Lessons</a>
+        <a href="lessons-demo.html">Lesson Demo</a>
+        <a href="methodology.html">Methodology</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section style="margin-top: 96px;">
+      <div class="container" style="max-width: 800px; margin: 0 auto;">
+        <h1 style="margin-bottom: 2rem;">Lesson 5: <span style="color: var(--accent-color);">Algorithm Adventures</span></h1>
+        <div class="lesson-body" style="font-size: 1.2rem;">
+          <ul style="list-style: disc inside; margin-bottom: 2rem;">
+            <li style="margin-bottom: 1rem;">You probably already know that apps show you stuff based on what you like.</li>
+            <li style="margin-bottom: 1rem;">But most people don't realize how much that shapes what you believe and how you see the world. I mean, you might intuitively get it, but it really shapes your perspective.</li>
+            <li style="margin-bottom: 1rem;">Ever think to yourself "how can this clown on Twitter not see things from my perspective? Doesn't he see the same news I'm seeing?!</li>
+            <li style="margin-bottom: 1rem;">Algorithms track what you click, watch, and engage with—and then build your whole feed around that.</li>
+            <li style="margin-bottom: 1rem;">This lesson shows how that process can lead to echo chambers, filter bubbles, or content spirals.</li>
+            <li style="margin-bottom: 1rem;">You'll explore what happens when two people click on different things and end up with totally different internets.</li>
+          </ul>
+          <div style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--accent-color-dark); font-weight: 600;">How algorithms shape what you see online.</div>
+          <div style="margin-bottom: 2rem;">
+           
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="activity-section">
+      <div class="activity-title">🛠️ Easy-to-Build Activity: Choose Your Clicks</div>
+      <div style="margin-bottom: 1rem; font-size:1.1rem;">Pick a topic to see your personalized feed. Then try switching identities to see a totally different feed!</div>
+      <div class="topic-cards">
+        <div class="topic-card" data-topic="truecrime">True Crime</div>
+        <div class="topic-card" data-topic="celeb">Celebrity News</div>
+        <div class="topic-card" data-topic="conspiracy">Conspiracy Theories</div>
+      </div>
+      <div id="feed-truecrime" class="feed-section feed-mock">
+        <div class="feed-title">Your True Crime Feed</div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=Crime+Wire&background=0d351c&color=fff&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">Crime Wire</span>
+            <span style="color:#888;font-size:0.95em;">· 2h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">Inside the Mind of a Serial Killer: What Drives Them?</div>
+        </div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=Unsolved+Files&background=474a2c&color=fff&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">Unsolved Files</span>
+            <span style="color:#888;font-size:0.95em;">· 4h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">Unsolved: The Chilling Disappearance of Jane Doe</div>
+        </div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=True+Crime+Daily&background=b7e6c4&color=333&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">True Crime Daily</span>
+            <span style="color:#888;font-size:0.95em;">· 6h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">Why Are We Obsessed With True Crime?</div>
+        </div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=Heist+Hub&background=f5f6ee&color=0d351c&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">Heist Hub</span>
+            <span style="color:#888;font-size:0.95em;">· 8h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">The Most Bizarre Heists You've Never Heard Of</div>
+        </div>
+      </div>
+      <div id="feed-celeb" class="feed-section feed-mock">
+        <div class="feed-title">Your Celebrity News Feed</div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=Pop+Buzz&background=0d351c&color=fff&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">Pop Buzz</span>
+            <span style="color:#888;font-size:0.95em;">· 1h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">Taylor Swift and Travis Kelce: Secret Wedding?</div>
+        </div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=Style+Watch&background=474a2c&color=fff&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">Style Watch</span>
+            <span style="color:#888;font-size:0.95em;">· 3h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">Why This Outfit Is Breaking the Internet</div>
+        </div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=Cancel+Culture+HQ&background=b7e6c4&color=333&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">Cancel Culture HQ</span>
+            <span style="color:#888;font-size:0.95em;">· 5h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">10 Celebs Who Got Cancelled (And Why)</div>
+        </div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=Red+Carpet+Live&background=f5f6ee&color=0d351c&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">Red Carpet Live</span>
+            <span style="color:#888;font-size:0.95em;">· 7h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">Red Carpet Fails: The Most Shocking Moments</div>
+        </div>
+      </div>
+      <div id="feed-conspiracy" class="feed-section feed-mock">
+        <div class="feed-title">Your Conspiracy Theory Feed</div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=Truth+Seekers&background=0d351c&color=fff&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">Truth Seekers</span>
+            <span style="color:#888;font-size:0.95em;">· 2h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">The Truth Behind Chemtrails</div>
+        </div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=5G+Watch&background=474a2c&color=fff&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">5G Watch</span>
+            <span style="color:#888;font-size:0.95em;">· 4h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">5G and Brain Control?</div>
+        </div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=Moon+Truthers&background=b7e6c4&color=333&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">Moon Truthers</span>
+            <span style="color:#888;font-size:0.95em;">· 6h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">Why the Moon Landing Was Faked</div>
+        </div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=Society+Files&background=f5f6ee&color=0d351c&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">Society Files</span>
+            <span style="color:#888;font-size:0.95em;">· 8h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">Secret Societies: Who Really Runs the World?</div>
+        </div>
+      </div>
+      <button class="switch-btn" id="switch-identity" style="display:none;">Switch Identity</button>
+      <div style="margin-top:2rem; font-size:1.1rem; color:var(--accent-color-dark); font-weight:600;">Did these feeds feel like the same internet? Notice how different these three mock feeds were.</div>
+    </section>
+    <div class="quiz-nav-btns">
+      <a href="lesson4.html" class="quiz-nav-btn">&larr; Back</a>
+      <a href="lesson6.html" class="quiz-nav-btn" style="background: var(--accent-color); color: #fff; border: none; border-radius: var(--border-radius); padding: 0.75rem 2.5rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">Next &rarr;</a>
+    </div>
+  </main>
+
+  <script>
+    const topicCards = document.querySelectorAll('.topic-card');
+    const feeds = {
+      truecrime: document.getElementById('feed-truecrime'),
+      celeb: document.getElementById('feed-celeb'),
+      conspiracy: document.getElementById('feed-conspiracy')
+    };
+    const switchBtn = document.getElementById('switch-identity');
+    let currentFeed = null;
+
+    topicCards.forEach(card => {
+      card.addEventListener('click', function() {
+        topicCards.forEach(c => c.classList.remove('selected'));
+        this.classList.add('selected');
+        Object.values(feeds).forEach(feed => feed.classList.remove('active'));
+        const topic = this.getAttribute('data-topic');
+        feeds[topic].classList.add('active');
+        switchBtn.style.display = 'block';
+        currentFeed = topic;
+      });
+    });
+
+    switchBtn.addEventListener('click', function() {
+      topicCards.forEach(c => c.classList.remove('selected'));
+      Object.values(feeds).forEach(feed => feed.classList.remove('active'));
+      switchBtn.style.display = 'none';
+      currentFeed = null;
+    });
+  </script>
+</body>
+</html> 
