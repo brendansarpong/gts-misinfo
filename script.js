@@ -335,3 +335,27 @@ document.addEventListener('DOMContentLoaded', () => {
   initCarousel();
   initZeldaSound();
 });
+
+// Add external link indicators
+function addExternalLinkIndicators() {
+  const externalLinks = document.querySelectorAll('a[href^="http"]:not([href*="' + window.location.hostname + '"])');
+  
+  externalLinks.forEach(link => {
+    // Skip if already has external-link class
+    if (link.classList.contains('external-link')) return;
+    
+    // Add external-link class
+    link.classList.add('external-link');
+    
+    // Add tooltip if it doesn't already exist
+    if (!link.querySelector('.external-link-tooltip')) {
+      const tooltip = document.createElement('span');
+      tooltip.className = 'external-link-tooltip';
+      tooltip.textContent = 'This link takes you to an external website';
+      link.appendChild(tooltip);
+    }
+  });
+}
+
+// Initialize external link indicators when DOM is loaded
+document.addEventListener('DOMContentLoaded', addExternalLinkIndicators);

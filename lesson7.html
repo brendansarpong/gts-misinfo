@@ -81,6 +81,54 @@
       box-shadow: 0 2px 8px rgba(13,53,28,0.08);
       text-align: center;
     }
+    .tweet-explanation {
+      background: var(--accent-color-lighter);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      box-shadow: 0 2px 8px rgba(13,53,28,0.08);
+      border-left: 4px solid var(--accent-color);
+    }
+    .explanation-title {
+      font-weight: 700;
+      color: var(--accent-color-dark);
+      margin-bottom: 1rem;
+      font-family: 'Fraunces', serif;
+    }
+    .red-flag {
+      background: #fff3cd;
+      border: 1px solid #ffeaa7;
+      border-radius: var(--border-radius);
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+    .red-flag-title {
+      font-weight: 600;
+      color: #856404;
+      margin-bottom: 0.5rem;
+    }
+    .external-link {
+      position: relative;
+    }
+    .external-link-tooltip {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--accent-color-dark);
+      color: #fff;
+      padding: 0.25rem 0.5rem;
+      border-radius: var(--border-radius);
+      font-size: 0.8rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .external-link:hover .external-link-tooltip {
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
@@ -99,7 +147,10 @@
   <main>
     <section style="margin-top: 96px;">
       <div class="container" style="max-width: 700px; margin: 0 auto;">
-        <h1 style="margin-bottom: 2rem;">Lesson 7: <span style="color: var(--accent-color);">Substantiate the Tweet</span></h1>
+        <div class="lesson-header">
+          <div class="lesson-number">Lesson 7</div>
+          <div class="lesson-title">Substantiate the Tweet</div>
+        </div>
         <div class="lesson-body" style="font-size: 1.2rem;">
           <ul style="list-style: disc inside; margin-bottom: 2rem;">
             <li style="margin-bottom: 1rem;">Anyone can post a screenshot that looks real, or even fake a tweet entirely. It took me all of 2 seconds to find a fake tweet generator online.</li>
@@ -120,20 +171,87 @@
       <div class="activity-title">🕵️‍♂️ Fake Tweet Analyzer</div>
       <img src="Tweets/faketweet_LAriots.png" alt="Fake Tweet Example" class="tweet-img" id="tweet-img" />
       <div class="verdict-options" id="verdict-options">
-        <label><input type="radio" name="verdict" value="real" class="verdict-radio"> Real</label>
-        <label><input type="radio" name="verdict" value="fake" class="verdict-radio"> Fake</label>
+        <label><input type="radio" name="verdict" value="real" class="verdict-radio"> Probably Real</label>
+        <label><input type="radio" name="verdict" value="fake" class="verdict-radio"> Probably Fake</label>
         <label><input type="radio" name="verdict" value="misleading" class="verdict-radio"> Misleading</label>
       </div>
+      <center><button class="activity-btn" id="submit-verdict">Submit</button></center>
+
       <input type="text" class="activity-input" id="user-reason" placeholder="Why? Type your reasoning here..." autocomplete="off" />
       <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
         <button class="activity-btn" id="prev-tweet" style="background: var(--accent-color-light); color: var(--accent-color-dark);">Previous Tweet</button>
         <button class="activity-btn" id="next-tweet" style="background: var(--accent-color-light); color: var(--accent-color-dark);">Next Tweet</button>
       </div>
-      <button class="activity-btn" id="submit-verdict">Submit</button>
       <div class="activity-links" id="factcheck-links" style="display:none;">
         <b>Want to check more?</b><br>
-        <a href="https://www.snopes.com/" target="_blank" style="color:var(--accent-color);text-decoration:underline;">Snopes.com</a> &nbsp;|&nbsp;
-        <a href="https://www.politifact.com/" target="_blank" style="color:var(--accent-color);text-decoration:underline;">PolitiFact.com</a>
+        <a href="https://www.snopes.com/" target="_blank" class="external-link" style="color:var(--accent-color);text-decoration:underline;">
+          Snopes.com
+          <span class="external-link-tooltip">This link takes you to an external website</span>
+        </a> &nbsp;|&nbsp;
+        <a href="https://www.politifact.com/" target="_blank" class="external-link" style="color:var(--accent-color);text-decoration:underline;">
+          PolitiFact.com
+          <span class="external-link-tooltip">This link takes you to an external website</span>
+        </a>
+      </div>
+      <div class="tweet-explanation" id="tweet-explanation" style="display:none;">
+        <div class="explanation-title">Why This Tweet is Fake</div>
+        <div class="red-flag">
+          <div class="red-flag-title">🚨 Bot-like Username</div>
+          <p>The username "Firstname Bunchofnumbers"-type names (like "John12345" or "Sarah789") is a classic sign of a bot account. Real users typically have more creative or personal usernames.</p>
+        </div>
+        <div class="red-flag">
+          <div class="red-flag-title">🚨 Inflammatory Buzzwords</div>
+          <p>Buzzwords and phrases like "woke" are designed to trigger emotional responses. </p>
+        </div>
+        <div class="red-flag">
+          <div class="red-flag-title">🚨 No Sources or Verification</div>
+          <p>The tweet makes dramatic claims and uses an inflammatory pic. But where are the links to news articles or official sources?</p>
+        </div>
+        <div class="red-flag">
+          <div class="red-flag-title">🚨 Out of Context Photo</div>
+          <p>The image image in that fake Tweet I made is from the 2017 Charlottesville race riots, not the 2025 LA ICE protests. Without proper attribution and context, photos can be misleading.</p>
+        </div>
+        <p><strong>Remember:</strong> Always look for multiple sources, check the account's history, and be skeptical of posts that seem designed to make you angry or afraid.</p>
+      </div>
+      <div class="tweet-explanation" id="tweet-explanation-2" style="display:none;">
+        <div class="explanation-title">Why This Tweet is Fake</div>
+        <div class="red-flag">
+          <div class="red-flag-title">🚨 Unsupported Statistics</div>
+          <p>The tweet throws out a specific number ($2000/month) but provides no source, official announcement, or government documentation to back it up. Real news would cite official sources.</p>
+        </div>
+        <div class="red-flag">
+          <div class="red-flag-title">🚨 Fraudulent News Source</div>
+          <p>I made up the account "@bestnewsonx" with the generic name "NewsFlash." These are often fake sources. They sound legitimate but have no real journalistic credibility or verification process (I definitely don't).</p>
+        </div>
+        <div class="red-flag">
+          <div class="red-flag-title">🚨 Political Commentary Disguised as News</div>
+          <p>The snarky comment about "nanny state winning again" reveals this is political commentary, not objective reporting. A credible news source would try to separate facts from opinion.</p>
+        </div>
+        <div class="red-flag">
+          <div class="red-flag-title">🚨 Confirmation Bias</div>
+          <p>A lot of fake news is based on a kernel of truth, and relies on your confirmation bias. Confirmation bias is when you're looking for information that confirms your existing beliefs, and ignore information that contradicts them. This Tweet builds on the common knowlege that Scandinavian countries have generous social programs.</p>
+        </div>
+        <p><strong>Remember:</strong> Even if something sounds plausible based on your existing beliefs, always verify claims with official sources and be wary of accounts that mix news with political commentary.</p>
+      </div>
+      <div class="tweet-explanation" id="tweet-explanation-3" style="display:none;">
+        <div class="explanation-title">Why This Tweet is Misleading</div>
+        <div class="red-flag">
+          <div class="red-flag-title">🚨 Verified Account ≠ Accurate Information</div>
+          <p>Even though this is a REAL TWEET from JK Rowling's verified account, that doesn't mean the information is correct. Verified accounts can still spread misinformation or make mistakes.</p>
+        </div>
+        <div class="red-flag">
+          <div class="red-flag-title">🚨 Hot Button Topic Bias</div>
+          <p>Trans women in sports is a highly controversial topic. When people see content about this issue, their existing biases can override their critical thinking, making them more likely to believe false claims without verification.</p>
+        </div>
+        <div class="red-flag">
+          <div class="red-flag-title">🚨 Blatantly Incorrect Information</div>
+          <p>Imane Khelif is a cisgender woman from Algeria, a country where being transgender is criminalized. The claim that she is a trans woman is completely false and easily verifiable with a simple search.</p>
+        </div>
+        <div class="red-flag">
+          <div class="red-flag-title">🚨 No Fact-Checking Before Sharing</div>
+          <p>This tweet shows how even influential people can share incorrect information without verifying it first. The fact that it's from a famous author doesn't make the claim any more accurate.</p>
+        </div>
+        <p><strong>Remember:</strong> Always fact-check claims, especially on controversial topics that trigger strong emotional responses. Don't let your biases or the source's credibility prevent you from verifying information.</p>
       </div>
     </section>
     <div class="quiz-nav-btns" style="display: flex; justify-content: space-between; max-width: 700px; margin: 2rem auto 0 auto;">
@@ -178,8 +296,11 @@
       // Reset or restore reason
       const reasonInput = document.getElementById('user-reason');
       reasonInput.value = tweetReasons[currentTweet] || "";
-      // Hide factcheck links and enable submit
+      // Hide factcheck links and explanations, enable submit
       document.getElementById('factcheck-links').style.display = 'none';
+      document.getElementById('tweet-explanation').style.display = 'none';
+      document.getElementById('tweet-explanation-2').style.display = 'none';
+      document.getElementById('tweet-explanation-3').style.display = 'none';
       document.getElementById('submit-verdict').disabled = false;
       // Disable prev/next if at ends
       document.getElementById('prev-tweet').disabled = currentTweet === 0;
@@ -195,6 +316,16 @@
       tweetVerdicts[currentTweet] = selected;
       tweetReasons[currentTweet] = reason;
       document.getElementById('factcheck-links').style.display = 'block';
+      
+      // Show appropriate explanation based on tweet
+      if (currentTweet === 0) {
+        document.getElementById('tweet-explanation').style.display = 'block';
+      } else if (currentTweet === 1) {
+        document.getElementById('tweet-explanation-2').style.display = 'block';
+      } else if (currentTweet === 2) {
+        document.getElementById('tweet-explanation-3').style.display = 'block';
+      }
+      
       this.disabled = true;
     });
 
