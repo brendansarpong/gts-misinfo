@@ -8,6 +8,248 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <style>
+    .activity-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+    
+    .content-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+      overflow: hidden;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .tweet-card {
+      background: #15202b;
+      color: white;
+      padding: 1.5rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    
+    .tweet-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .tweet-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #1da1f2;
+      margin-right: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    
+    .tweet-user {
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+    
+    .tweet-handle {
+      color: #8899a6;
+    }
+    
+    .tweet-content {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    
+    .tweet-actions {
+      display: flex;
+      gap: 2rem;
+      color: #8899a6;
+      font-size: 0.9rem;
+    }
+    
+    .news-card {
+      background: white;
+      padding: 2rem;
+      border-left: 4px solid #d32f2f;
+    }
+    
+    .news-source {
+      color: #666;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+    }
+    
+    .news-headline {
+      font-size: 1.8rem;
+      font-weight: bold;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    
+    .news-subtitle {
+      color: #666;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    
+    .youtube-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+    
+    .youtube-thumbnail {
+      background: #ff0000;
+      height: 120px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .youtube-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+    
+    .youtube-channel {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    .analysis-section {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+    
+    .analysis-title {
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    
+    .tone-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .tone-btn {
+      padding: 0.5rem 1rem;
+      border: 2px solid #ddd;
+      background: white;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+    }
+    
+    .tone-btn:hover {
+      border-color: var(--accent-color);
+    }
+    
+    .tone-btn.selected {
+      background: var(--accent-color);
+      color: white;
+      border-color: var(--accent-color);
+    }
+    
+    .goal-input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    
+    .emotion-slider {
+      width: 100%;
+      margin: 1rem 0;
+    }
+    
+    .emotion-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+    
+    .submit-btn {
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .submit-btn:hover {
+      background: #0056b3;
+    }
+    
+    .feedback {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      display: none;
+    }
+    
+    .feedback.correct {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    
+    .feedback.incorrect {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #e0e0e0;
+      border-radius: 4px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: var(--accent-color);
+      transition: width 0.3s ease;
+      width: 0%;
+    }
+    
+    .card-counter {
+      text-align: center;
+      color: #666;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
   <nav>
@@ -24,30 +266,317 @@
 
   <main>
     <section style="margin-top: 96px;">
-      <div class="container" style="max-width: 700px; margin: 0 auto;">
+      <div class="container" style="max-width: 800px; margin: 0 auto;">
         <div class="lesson-header">
           <div class="lesson-number">Lesson 6</div>
           <div class="lesson-title">What's Their Angle?</div>
         </div>
-        <div class="lesson-body" style="font-size: 1.2rem;">
-          <ul style="list-style: disc inside; margin-bottom: 2rem;">
-            <li style="margin-bottom: 1rem;">Not all misinformation is a lie—sometimes, it's just one-sided, manipulative, or exaggerated.</li>
-            <li style="margin-bottom: 1rem;">Online creators often use tone and intent to shape your perception without saying anything technically untrue.</li>
-            <li style="margin-bottom: 1rem;">Is this post trying to inform you? Sell you something? Stir up outrage?</li>
-            <li style="margin-bottom: 1rem;">In this lesson, you'll learn how to break down a piece of content by looking at:</li>
-            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
-              <li>The language used</li>
-              <li>The tone of voice or emotion it triggers</li>
-              <li>The creator's likely motivation</li>
-            </ul>
-          </ul>
+        
+        <div class="lesson-body" style="font-size: 1.2rem; margin-bottom: 2rem;">
+          <p>Analyze the tone, goals, and emotions in these different types of content. Think about what the creator is trying to achieve and how they're trying to make you feel.</p>
+        </div>
+
+        <div class="activity-container">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          
+          <div class="card-counter" id="cardCounter">Card 1 of 6</div>
+          
+          <div id="contentCards">
+            <!-- Cards will be populated by JavaScript -->
+          </div>
+          
+          <div id="completionMessage" style="display: none; text-align: center; padding: 3rem;">
+            <h2>Great job!</h2>
+            <p>You've completed the tone analysis activity. You're getting better at recognizing different angles and motivations in online content.</p>
+            <button onclick="resetActivity()" class="submit-btn" style="margin-top: 1rem;">Try Again</button>
+          </div>
         </div>
       </div>
     </section>
+    
     <div class="quiz-nav-btns" style="display: flex; justify-content: space-between; max-width: 700px; margin: 2rem auto 0 auto;">
       <a href="lesson5.html" class="quiz-nav-btn" style="background: var(--accent-color); color: #fff; border: none; border-radius: var(--border-radius); padding: 0.75rem 2.5rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">&larr; Back</a>
       <a href="lesson7.html" class="quiz-nav-btn" style="background: var(--accent-color); color: #fff; border: none; border-radius: var(--border-radius); padding: 0.75rem 2.5rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">Next &rarr;</a>
     </div>
   </main>
+
+  <script>
+    const contentData = [
+      {
+        type: 'tweet',
+        content: 'Millennials are destroying the diamond industry and I am HERE FOR IT 💎',
+        user: 'Sarah Chen',
+        handle: '@sarahchen',
+        possibleTones: ['sarcastic', 'celebratory', 'humorous', 'defiant'],
+        possibleGoals: ['To mock traditional industries', 'To celebrate change', 'To express generational pride', 'To challenge societal norms'],
+        possibleEmotions: ['amusement', 'pride', 'satisfaction', 'defiance']
+      },
+      {
+        type: 'news',
+        source: 'GAMING DAILY',
+        headline: 'BREAKING: FALLOUT 5 Release Date CONFIRMED - Everything You Need to Know',
+        subtitle: 'Bethesda finally reveals the highly anticipated sequel that fans have been waiting for',
+        possibleTones: ['sensational', 'urgent', 'exciting', 'misleading'],
+        possibleGoals: ['To generate clicks and views', 'To create false excitement', 'To drive traffic with false information', 'To capitalize on fan anticipation'],
+        possibleEmotions: ['excitement', 'anticipation', 'curiosity', 'disappointment']
+      },
+      {
+        type: 'youtube',
+        title: 'Liberal Senator SLAMS Trump in EPIC Rant - You Won\'t Believe What Happened Next!',
+        channel: 'Political News Daily',
+        possibleTones: ['dramatic', 'outraged', 'sensational', 'partisan'],
+        possibleGoals: ['To generate outrage and engagement', 'To drive political division', 'To create viral content', 'To appeal to specific audience'],
+        possibleEmotions: ['anger', 'outrage', 'frustration', 'amusement']
+      },
+      {
+        type: 'tweet',
+        content: 'The secret weight loss trick they don\'t want you to know about 👇',
+        user: 'Health Guru',
+        handle: '@healthguru',
+        possibleTones: ['mysterious', 'promotional', 'clickbait', 'suspicious'],
+        possibleGoals: ['To sell a product or service', 'To generate leads', 'To create curiosity', 'To build email list'],
+        possibleEmotions: ['curiosity', 'hope', 'skepticism', 'desperation']
+      },
+      {
+        type: 'news',
+        source: 'LIFESTYLE MAGAZINE',
+        headline: 'You\'re Washing Your Face Wrong - Here\'s the Right Way',
+        subtitle: 'Dermatologists reveal the shocking truth about your skincare routine',
+        possibleTones: ['authoritative', 'corrective', 'helpful', 'patronizing'],
+        possibleGoals: ['To make readers feel insecure', 'To provide helpful advice', 'To sell skincare products', 'To establish expertise'],
+        possibleEmotions: ['insecurity', 'curiosity', 'defensiveness', 'gratitude']
+      },
+      {
+        type: 'youtube',
+        title: 'Trump Election Faces DEVASTATING Endorsement Blow - Campaign in Crisis!',
+        channel: 'Breaking Politics',
+        possibleTones: ['dramatic', 'sensational', 'alarmist', 'partisan'],
+        possibleGoals: ['To generate political outrage', 'To drive engagement', 'To influence opinion', 'To create urgency'],
+        possibleEmotions: ['shock', 'concern', 'amusement', 'indifference']
+      }
+    ];
+
+    let currentCardIndex = 0;
+    let score = 0;
+
+    function createCard(cardData, index) {
+      let cardHTML = '';
+      
+      if (cardData.type === 'tweet') {
+        cardHTML = `
+          <div class="content-card tweet-card">
+            <div class="tweet-header">
+              <div class="tweet-avatar">${cardData.user.charAt(0)}</div>
+              <div>
+                <span class="tweet-user">${cardData.user}</span>
+                <span class="tweet-handle">${cardData.handle}</span>
+              </div>
+            </div>
+            <div class="tweet-content">${cardData.content}</div>
+            <div class="tweet-actions">
+              <span>💬 1.2K</span>
+              <span>🔄 5.6K</span>
+              <span>❤️ 12.3K</span>
+            </div>
+          </div>
+        `;
+      } else if (cardData.type === 'news') {
+        cardHTML = `
+          <div class="content-card news-card">
+            <div class="news-source">${cardData.source}</div>
+            <div class="news-headline">${cardData.headline}</div>
+            <div class="news-subtitle">${cardData.subtitle}</div>
+          </div>
+        `;
+      } else if (cardData.type === 'youtube') {
+        cardHTML = `
+          <div class="content-card youtube-card">
+            <div class="youtube-thumbnail">▶️</div>
+            <div class="youtube-title">${cardData.title}</div>
+            <div class="youtube-channel">${cardData.channel}</div>
+          </div>
+        `;
+      }
+
+      cardHTML += `
+        <div class="analysis-section">
+          <div class="analysis-title">What tones do you detect in this content? (Select all that apply)</div>
+          <div class="tone-buttons">
+            <button class="tone-btn" data-tone="sensational">Sensational</button>
+            <button class="tone-btn" data-tone="dramatic">Dramatic</button>
+            <button class="tone-btn" data-tone="sarcastic">Sarcastic</button>
+            <button class="tone-btn" data-tone="authoritative">Authoritative</button>
+            <button class="tone-btn" data-tone="mysterious">Mysterious</button>
+            <button class="tone-btn" data-tone="urgent">Urgent</button>
+            <button class="tone-btn" data-tone="celebratory">Celebratory</button>
+            <button class="tone-btn" data-tone="outraged">Outraged</button>
+            <button class="tone-btn" data-tone="promotional">Promotional</button>
+            <button class="tone-btn" data-tone="corrective">Corrective</button>
+            <button class="tone-btn" data-tone="humorous">Humorous</button>
+            <button class="tone-btn" data-tone="defiant">Defiant</button>
+            <button class="tone-btn" data-tone="misleading">Misleading</button>
+            <button class="tone-btn" data-tone="partisan">Partisan</button>
+            <button class="tone-btn" data-tone="clickbait">Clickbait</button>
+            <button class="tone-btn" data-tone="suspicious">Suspicious</button>
+            <button class="tone-btn" data-tone="patronizing">Patronizing</button>
+            <button class="tone-btn" data-tone="helpful">Helpful</button>
+            <button class="tone-btn" data-tone="alarmist">Alarmist</button>
+          </div>
+          
+          <div class="analysis-title">What do you think the creator's goal might be?</div>
+          <input type="text" class="goal-input" placeholder="Enter your thoughts on the creator's likely goal...">
+          
+          <div class="analysis-title">What emotion is this trying to trigger?</div>
+          <input type="range" class="emotion-slider" min="1" max="8" value="4">
+          <div class="emotion-labels">
+            <span>Calm</span>
+            <span>Curious</span>
+            <span>Excited</span>
+            <span>Angry</span>
+            <span>Shocked</span>
+            <span>Insecure</span>
+            <span>Amused</span>
+            <span>Indifferent</span>
+          </div>
+          
+          <button class="submit-btn" onclick="submitAnalysis(${index})">Get Feedback</button>
+          
+          <div class="feedback" id="feedback-${index}"></div>
+        </div>
+      `;
+      
+      return cardHTML;
+    }
+
+    function displayCard(index) {
+      const cardsContainer = document.getElementById('contentCards');
+      const cardData = contentData[index];
+      
+      cardsContainer.innerHTML = createCard(cardData, index);
+      document.getElementById('cardCounter').textContent = `Card ${index + 1} of ${contentData.length}`;
+      
+      // Update progress bar
+      const progress = ((index + 1) / contentData.length) * 100;
+      document.getElementById('progressFill').style.width = progress + '%';
+      
+      // Add event listeners to tone buttons (allow multiple selection)
+      document.querySelectorAll('.tone-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          this.classList.toggle('selected');
+        });
+      });
+    }
+
+    function submitAnalysis(index) {
+      const selectedTones = Array.from(document.querySelectorAll('.tone-btn.selected')).map(btn => btn.dataset.tone);
+      const goalInput = document.querySelector('.goal-input').value.trim();
+      const emotionSlider = document.querySelector('.emotion-slider');
+      const feedback = document.getElementById(`feedback-${index}`);
+      
+      const cardData = contentData[index];
+      const emotions = ['calm', 'curious', 'excited', 'angry', 'shocked', 'insecure', 'amused', 'indifferent'];
+      const selectedEmotion = emotions[parseInt(emotionSlider.value) - 1];
+      
+      // Check for matches with possible answers
+      const matchingTones = selectedTones.filter(tone => cardData.possibleTones.includes(tone));
+      const toneScore = matchingTones.length / Math.max(selectedTones.length, 1);
+      
+      // Check goal (keyword matching with multiple possible goals)
+      let goalScore = 0;
+      if (goalInput) {
+        const inputLower = goalInput.toLowerCase();
+        const matchingGoals = cardData.possibleGoals.filter(goal => 
+          goal.toLowerCase().split(' ').some(word => inputLower.includes(word))
+        );
+        goalScore = matchingGoals.length > 0 ? 1 : 0.3; // Partial credit for any reasonable answer
+      }
+      
+      // Check emotion
+      const emotionScore = cardData.possibleEmotions.includes(selectedEmotion) ? 1 : 0.5;
+      
+      const totalScore = (toneScore + goalScore + emotionScore) / 3;
+      
+      // Provide constructive feedback instead of just right/wrong
+      feedback.className = 'feedback correct';
+      
+      let feedbackHTML = '<strong>Great analysis! Here are some thoughts:</strong><br><br>';
+      
+      // Tone feedback
+      if (matchingTones.length > 0) {
+        feedbackHTML += `<strong>Good tone detection:</strong> ${matchingTones.join(', ')}<br>`;
+      }
+      if (selectedTones.length > matchingTones.length) {
+        const missedTones = cardData.possibleTones.filter(tone => !selectedTones.includes(tone));
+        feedbackHTML += `<strong>You might also consider:</strong> ${missedTones.join(', ')}<br>`;
+      }
+      
+      feedbackHTML += '<br>';
+      
+      // Goal feedback
+      if (goalScore > 0.5) {
+        feedbackHTML += `<strong>Good goal analysis!</strong><br>`;
+      }
+      feedbackHTML += `<strong> Other possible goals:</strong> ${cardData.possibleGoals.join('; ')}<br><br>`;
+      
+      // Emotion feedback
+      if (emotionScore > 0.5) {
+        feedbackHTML += `<strong>Good emotion detection!</strong><br>`;
+      }
+      feedbackHTML += `<strong>Other emotions this might trigger:</strong> ${cardData.possibleEmotions.join(', ')}<br><br>`;
+      
+      feedbackHTML += '<em>Remember: Content can have multiple tones and goals. The key is being aware of what emotions and reactions it\'s trying to create in you.</em>';
+      
+      feedback.innerHTML = feedbackHTML;
+      feedback.style.display = 'block';
+      
+      // Add next button after feedback
+      const nextButton = document.createElement('button');
+      nextButton.className = 'submit-btn';
+      nextButton.style.marginTop = '1rem';
+      nextButton.textContent = index < contentData.length - 1 ? 'Next Headline →' : 'Finish Activity';
+      nextButton.onclick = () => {
+        if (index < contentData.length - 1) {
+          currentCardIndex = index + 1;
+          displayCard(currentCardIndex);
+        } else {
+          showCompletion();
+        }
+      };
+      feedback.appendChild(nextButton);
+    }
+
+    function showCompletion() {
+      document.getElementById('contentCards').style.display = 'none';
+      document.getElementById('cardCounter').style.display = 'none';
+      document.getElementById('completionMessage').style.display = 'block';
+      
+      document.getElementById('completionMessage').innerHTML = `
+        <h2>Great work!</h2>
+        <p>You've completed the tone analysis activity. You're developing important skills for recognizing different angles and motivations in online content.</p>
+        <p><strong>Key takeaways:</strong></p>
+        <ul style="text-align: left; max-width: 500px; margin: 1rem auto;">
+          <li>Content often has multiple tones and goals</li>
+          <li>Pay attention to how content makes you feel</li>
+          <li>Question the creator's motivation</li>
+          <li>Be aware of emotional manipulation techniques</li>
+        </ul>
+        <button onclick="resetActivity()" class="submit-btn" style="margin-top: 1rem;">Try Again</button>
+      `;
+    }
+
+    function resetActivity() {
+      currentCardIndex = 0;
+      score = 0;
+      document.getElementById('contentCards').style.display = 'block';
+      document.getElementById('cardCounter').style.display = 'block';
+      document.getElementById('completionMessage').style.display = 'none';
+      displayCard(0);
+    }
+
+    // Initialize the activity
+    displayCard(0);
+  </script>
 </body>
 </html> 
