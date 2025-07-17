@@ -3,99 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lesson 8: Final Challenge - Project Prometheus</title>
+  <title>Lesson 7 The Finale - Project Prometheus</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   <style>
-    .construction-card {
-      background: linear-gradient(135deg, #374151 0%, #1f2937 50%, #111827 100%);
-      border-radius: 16px;
-      padding: 3rem 2rem;
-      text-align: center;
-      color: white;
-      margin: 3rem auto;
-      max-width: 600px;
-      box-shadow: 0 8px 32px rgba(31, 41, 55, 0.3);
+    .completion-card {
+      background: var(--accent-color-lighter);
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 24px rgba(13, 53, 70, 0.1);
+      margin: var(--spacing-lg) 0;
+      padding: var(--spacing-lg) var(--spacing-md);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
       position: relative;
       overflow: hidden;
+      text-align: center;
     }
-    
-    .construction-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                  radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
-      animation: gentle-float 8s ease-in-out infinite;
-    }
-    
-    @keyframes gentle-float {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-10px) rotate(1deg); }
-    }
-    
-    .construction-content {
-      position: relative;
-      z-index: 2;
-    }
-    
-    .construction-icon {
+    .completion-icon {
       font-size: 4rem;
       margin-bottom: 1rem;
       display: block;
-      animation: gentle-wiggle 4s ease-in-out infinite;
     }
-    
-    @keyframes gentle-wiggle {
-      0%, 100% { transform: rotate(0deg); }
-      25% { transform: rotate(5deg); }
-      75% { transform: rotate(-5deg); }
-    }
-    
-    .construction-title {
+    .completion-title {
       font-size: 2rem;
       font-weight: bold;
       margin-bottom: 1rem;
       font-family: 'Fraunces', serif;
+      color: var(--accent-color-dark);
     }
-    
-    .construction-text {
+    .completion-text {
       font-size: 1.1rem;
       line-height: 1.6;
-      opacity: 0.9;
+      color: var(--text-primary);
       margin-bottom: 1.5rem;
     }
-    
-    .construction-progress {
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
-      height: 8px;
-      margin: 1.5rem 0;
-      overflow: hidden;
+    .completion-stats {
+      background: #fff;
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      box-shadow: 0 2px 12px rgba(133, 80, 1, 0.1);
     }
-    
-    .construction-progress-fill {
-      background: rgba(255, 255, 255, 0.8);
-      height: 100%;
-      width: 35%;
-      border-radius: 20px;
-      animation: progress-breathe 3s ease-in-out infinite;
+    .stat-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--accent-color-light);
     }
-    
-    @keyframes progress-breathe {
-      0%, 100% { opacity: 0.7; transform: scaleX(1); }
-      50% { opacity: 1; transform: scaleX(1.05); }
+    .stat-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
     }
-    
-    .construction-status {
-      font-size: 0.9rem;
-      opacity: 0.8;
-      font-style: italic;
+    .stat-name {
+      font-weight: 600;
+      color: var(--accent-color-dark);
+    }
+    .stat-value {
+      font-weight: 700;
+      color: var(--accent-color);
     }
   </style>
 </head>
@@ -116,41 +86,34 @@
     <section style="margin-top: 96px;">
       <div class="container" style="max-width: 700px; margin: 0 auto;">
         <div class="lesson-header">
-          <div class="lesson-number">Lesson 8</div>
-          <div class="lesson-title">Final Challenge</div>
+          <div class="lesson-number">Lesson 7</div>
+          <div class="lesson-title">The Finale</div>
         </div>
         <div class="lesson-body" style="font-size: 1.2rem;">
           <ul style="list-style: disc inside; margin-bottom: 2rem;">
-            <li style="margin-bottom: 1rem;">You've now seen how misinformation spreads, how AI can fake reality, and how algorithms can warp your feed.</li>
-            <li style="margin-bottom: 1rem;">You've learned to think about bias, emotional manipulation, and hidden agendas.</li>
-            <li style="margin-bottom: 1rem;">In this final lesson, we're going to put it all together.</li>
-            <li style="margin-bottom: 1rem;">You'll review the biggest takeaways from the course, check in on your own confidence, and reflect on how these skills apply to the real web.</li>
-            <li style="margin-bottom: 1rem;">Because the internet isn't going to slow down or get easier. The details might become outdated, especially in regard to AI generated content, but the principles are still essential. You'll be better prepared to navigate this internet landscape. Go forth.</li>
-            <li style="margin-bottom: 1rem;">Then: You'll take a short reflective challenge that brings together everything you've learned.</li>
+            <li style="margin-bottom: 1rem;">You've now seen how misinformation spreads, how AI can fake reality, how algorithms can warp your feed, and more.</li>
+            <li style="margin-bottom: 1rem;">To be clear, the internet isn't going to slow down or get easier. The details might become outdated, especially in regard to AI generated content, but the principles are still essential. You're now better prepared to navigate this internet landscape.</li>
+            <li style="margin-bottom: 1rem;">Please take this short reflective survey. This will help me improve the curriculum</li>
+            <li style="margin-bottom: 1rem;">Thanks so much for taking the course! I hope you found it helpful. Go forth with your newfound knowledge.</li>
           </ul>
         </div>
       </div>
     </section>
     
-    <div class="construction-card">
-      <div class="construction-content">
-        <span class="construction-icon">🚧</span>
-        <div class="construction-title">Activity Under Construction</div>
-        <div class="construction-text">
-          We're building something special for the final challenge! This activity will bring together everything you've learned about misinformation detection, AI awareness, and critical thinking.
-        </div>
-        <div class="construction-progress">
-          <div class="construction-progress-fill"></div>
-        </div>
-        <div class="construction-status">
-          Estimated completion: Coming soon
-        </div>
+    <div class="completion-card">
+      <div class="completion-icon">🎉</div>
+      <div class="completion-title">Course Complete</div>
+      <div class="completion-text">
+        Congrats - you completed all the lessons in Project Prometheus. 
+        You now have some tools to navigate the modern internet.
       </div>
+      <a href="https://forms.gle/cuW382ac8j76ayeZ8" class="survey-btn" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: var(--accent-color); color: #fff; border: none; border-radius: var(--border-radius); padding:1.5em 3rem; font-size: 1.3rem; font-weight: 700; text-decoration: none; margin: 2rem 0; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(133, 80, 1, 0.2);">Take my Post-Course Survey Please (this will take you to a new site)</a>
+      <div class="completion-text">Help me with my research by sharing your feedback! (This button will take you to a Google Form)</div>
     </div>
     
     <div class="quiz-nav-btns" style="display: flex; justify-content: space-between; max-width: 700px; margin: 2rem auto 0 auto;">
       <a href="lesson7.html" class="quiz-nav-btn" style="background: var(--accent-color); color: #fff; border: none; border-radius: var(--border-radius); padding: 0.75rem 2.5rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">&larr; Back</a>
-      <a href="#" class="quiz-nav-btn" style="background: var(--accent-color); color: #fff; border: none; border-radius: var(--border-radius); padding: 0.75rem 2.5rem; font-size: 1.1rem; font-weight: 600; opacity:0.5; pointer-events:none;">Next &rarr;</a>
+      <a href="index.html" class="quiz-nav-btn" style="background: var(--accent-color); color: #fff; border: none; border-radius: var(--border-radius); padding: 0.75rem 2.5rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">Return Home 🏠</a>
     </div>
   </main>
 </body>
