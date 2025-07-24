@@ -100,6 +100,77 @@ nav a:hover {
     color: var(--accent-color);
 }
 
+/* Dropdown for Lessons nav item */
+.nav-links {
+  position: relative;
+}
+
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--primary-bg);
+  box-shadow: 0 8px 24px rgba(13,53,28,0.10);
+  border-radius: 0 0 12px 12px;
+  min-width: 220px;
+  z-index: 1100;
+  padding: 0.5rem 0;
+  border: 1px solid var(--accent-color-lighter);
+  animation: fadeInDropdown 0.2s;
+}
+
+.nav-dropdown a {
+  display: block;
+  padding: 0.7rem 1.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.18s, color 0.18s;
+  border-radius: 6px;
+}
+
+.nav-dropdown a:hover {
+  background: var(--accent-color-lighter);
+  color: var(--accent-color);
+}
+
+.nav-links .dropdown-parent {
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-links .dropdown-parent:after {
+  content: '\25BC';
+  font-size: 0.7em;
+  margin-left: 0.4em;
+  color: var(--accent-color-dark);
+  vertical-align: middle;
+  transition: transform 0.2s;
+}
+
+.nav-links .dropdown-parent.open:after {
+  transform: rotate(-180deg);
+}
+
+.nav-links .dropdown-parent.open .nav-dropdown {
+  display: block;
+}
+
+@keyframes fadeInDropdown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .nav-dropdown {
+    left: auto;
+    right: 0;
+    min-width: 160px;
+  }
+}
+
 main {
     margin-top: 120px;
 }
@@ -1419,4 +1490,24 @@ h1 {
 
 /* Remove accent-highlight-section, svg-wave-top, and accent-highlight-content styles */
 .accent-highlight-section, .svg-wave-top, .accent-highlight-content { display: none !important; }
+  
+.verify-claims-link {
+  position: absolute;
+  right: 16px;
+  top: 8px;
+  font-size: 0.95rem;
+  color: var(--accent-color-dark);
+  background: var(--accent-color-lighter);
+  border-radius: 8px;
+  padding: 0.4rem 1rem;
+  text-decoration: underline dotted;
+  opacity: 0.85;
+  z-index: 10;
+  transition: background 0.2s, color 0.2s;
+}
+.verify-claims-link:hover {
+  background: var(--accent-color);
+  color: #fff;
+  opacity: 1;
+}
   

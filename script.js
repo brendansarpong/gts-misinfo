@@ -359,3 +359,37 @@ function addExternalLinkIndicators() {
 
 // Initialize external link indicators when DOM is loaded
 document.addEventListener('DOMContentLoaded', addExternalLinkIndicators);
+
+// Dropdown for Lessons nav item
+function setupLessonsDropdown() {
+  const navLinks = document.querySelector('.nav-links');
+  if (!navLinks) return;
+  const lessonsParent = navLinks.querySelector('.dropdown-parent');
+  if (!lessonsParent) return;
+
+  // Open on hover (desktop)
+  lessonsParent.addEventListener('mouseenter', () => {
+    lessonsParent.classList.add('open');
+  });
+  lessonsParent.addEventListener('mouseleave', () => {
+    lessonsParent.classList.remove('open');
+  });
+
+  // Open/close on click (mobile/focus)
+  lessonsParent.addEventListener('click', function(e) {
+    // Only toggle if not hovering (for mobile)
+    if (window.innerWidth <= 900) {
+      e.preventDefault();
+      lessonsParent.classList.toggle('open');
+    }
+  });
+
+  // Close dropdown on outside click
+  document.addEventListener('click', function(e) {
+    if (!lessonsParent.contains(e.target)) {
+      lessonsParent.classList.remove('open');
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', setupLessonsDropdown);

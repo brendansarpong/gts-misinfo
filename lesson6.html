@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lesson 5: What's Their Angle? - Project Prometheus</title>
+  <title>Lesson 5: What's Their Angle? - Netwise</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -254,11 +254,22 @@
 <body>
   <nav>
     <div class="nav-content">
-      <a href="index.html" class="logo">Project Prometheus</a>
+      <a href="index.html" class="logo">Netwise</a>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="lessons.html">Lessons</a>
-        <a href="lessons-demo.html">Lesson Demo</a>
+        <div class="dropdown-parent"> 
+          <a href="lessons.html">Lessons</a>
+          <div class="nav-dropdown">
+            <a href="lesson_one.html">Intro</a>
+            <a href="lesson2.html">Sponsor Hunt</a>
+            <a href="lesson3.html">Ragebait</a>
+            <a href="lesson4.html">AI or IRL?</a>
+            <a href="lesson5.html">Algorithm Adventures</a>
+            <a href="lesson6.html">What's Their Angle?</a>
+            <a href="lesson7.html">Substantiate the Tweet</a>
+            <a href="lesson8.html">Finale...</a>
+          </div>
+        </div>
         <a href="methodology.html">Methodology</a>
       </div>
     </div>
@@ -295,11 +306,11 @@
         </div>
       </div>
     </section>
-    
-    <div class="quiz-nav-btns" style="display: flex; justify-content: space-between; max-width: 700px; margin: 2rem auto 0 auto;">
+    <div class="quiz-nav-btns" style="display: flex; justify-content: space-between; max-width: 800px; margin: 2rem auto 0 auto;">
       <a href="lesson5.html" class="quiz-nav-btn" style="background: var(--accent-color); color: #fff; border: none; border-radius: var(--border-radius); padding: 0.75rem 2.5rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">&larr; Back</a>
       <a href="lesson7.html" class="quiz-nav-btn" style="background: var(--accent-color); color: #fff; border: none; border-radius: var(--border-radius); padding: 0.75rem 2.5rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">Next &rarr;</a>
     </div>
+    <a href="methodology.html" class="verify-claims-link" style="display:block; margin: 2.5rem auto 0 auto; position:static; text-align:center;">Verify claims on the "Methodology" page by clicking here.</a>
   </main>
 
   <script>
@@ -578,5 +589,6 @@
     // Initialize the activity
     displayCard(0);
   </script>
+  <script src="script.js"></script>
 </body>
 </html> 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lesson 4: Algorithm Adventures - Project Prometheus</title>
+  <title>Lesson 4: Algorithm Adventures - Netwise</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -146,11 +146,22 @@
 <body>
   <nav>
     <div class="nav-content">
-      <a href="index.html" class="logo">Project Prometheus</a>
+      <a href="index.html" class="logo">Netwise</a>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="lessons.html">Lessons</a>
-        <a href="lessons-demo.html">Lesson Demo</a>
+        <div class="dropdown-parent"> 
+          <a href="lessons.html">Lessons</a>
+          <div class="nav-dropdown">
+            <a href="lesson_one.html">Intro</a>
+            <a href="lesson2.html">Sponsor Hunt</a>
+            <a href="lesson3.html">Ragebait</a>
+            <a href="lesson4.html">AI or IRL?</a>
+            <a href="lesson5.html">Algorithm Adventures</a>
+            <a href="lesson6.html">What's Their Angle?</a>
+            <a href="lesson7.html">Substantiate the Tweet</a>
+            <a href="lesson8.html">Finale...</a>
+          </div>
+        </div>
         <a href="methodology.html">Methodology</a>
       </div>
     </div>
@@ -163,6 +174,7 @@
           <div class="lesson-number">Lesson 4</div>
           <div class="lesson-title">Algorithm Adventures</div>
         </div>
+        <a href="methodology.html" class="verify-claims-link" style="position: absolute; right: 24px; top: 24px; font-size: 0.95rem; color: var(--accent-color-dark); background: var(--accent-color-lighter); border-radius: 8px; padding: 0.4rem 1rem; text-decoration: underline dotted; opacity: 0.85; z-index: 10; transition: background 0.2s;">Verify claims</a>
         <div class="lesson-body" style="font-size: 1.2rem;">
           <ul style="list-style: disc inside; margin-bottom: 2rem;">
             <li style="margin-bottom: 1rem;">You probably already know that <a href="https://comartsci.msu.edu/about/newsroom/news/effects-algorithms-internet-behaviors" target="_blank" class="external-link">apps show you stuff based on what you like.</a><span class="external-link-tooltip">This link takes you to an external website</span></li>
@@ -182,155 +194,177 @@
     </section>
 
     <section class="activity-section">
-      <div class="activity-title"> Feed Frenzy
-      <div style="margin-bottom: 1rem; font-size:1.1rem;">Pick a topic to see your personalized feed. Then try switching identities to see a totally different feed!</div>
-      <div class="topic-cards">
-        <div class="topic-card" data-topic="truecrime">True Crime</div>
-        <div class="topic-card" data-topic="celeb">Celebrity News</div>
-        <div class="topic-card" data-topic="conspiracy">Conspiracy Theories</div>
+      <div class="activity-title"> Take a look at these feeds.
+      <div style="margin-bottom: 1rem; font-size:1.1rem;">Ever feel like the other side just isn't seeing the same stuff as you? You're probably right. Switch identities to see how the same news events are covered differently.</div>
+      <div class="identity-switcher" style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem;">
+        <button class="identity-btn" data-identity="progressive" style="flex:1; padding:0.7rem 1.5rem; font-size:1.1rem; font-weight:600; border-radius:24px; border:none; background:var(--accent-color-light); color:var(--accent-color-dark); cursor:pointer; transition:background 0.2s;">Progressive</button>
+        <button class="identity-btn" data-identity="neutral" style="flex:1; padding:0.7rem 1.5rem; font-size:1.1rem; font-weight:600; border-radius:24px; border:none; background:#eee; color:#333; cursor:pointer; transition:background 0.2s;">Neutral</button>
+        <button class="identity-btn" data-identity="conservative" style="flex:1; padding:0.7rem 1.5rem; font-size:1.1rem; font-weight:600; border-radius:24px; border:none; background:var(--accent-color-light); color:var(--accent-color-dark); cursor:pointer; transition:background 0.2s;">Conservative</button>
       </div>
-      <div id="feed-truecrime" class="feed-section feed-mock">
-        <div class="feed-title">Your True Crime Feed</div>
+      <div id="feed-progressive" class="feed-section feed-mock">
+        <div class="feed-title">A more progressive feed</div>
         <div class="feed-post">
           <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
-            <img src="https://ui-avatars.com/api/?name=Crime+Wire&background=0d351c&color=fff&size=32" style="width:32px;height:32px;border-radius:50%;">
-            <span style="font-weight:600;">Crime Feed</span>
-            <span style="color:#888;font-size:0.95em;">· 2h ago</span>
-          </div>
-          <div style="font-size:1.1em;font-weight:500;">Inside the Mind of a Serial Killer: What Drives Them?</div>
-        </div>
-        <div class="feed-post">
-          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
-            <img src="https://ui-avatars.com/api/?name=Unsolved+Files&background=474a2c&color=fff&size=32" style="width:32px;height:32px;border-radius:50%;">
-            <span style="font-weight:600;">Unsolved Files</span>
-            <span style="color:#888;font-size:0.95em;">· 4h ago</span>
-          </div>
-          <div style="font-size:1.1em;font-weight:500;">Unsolved: The Chilling Disappearance of Jane Doe</div>
-        </div>
-        <div class="feed-post">
-          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
-            <img src="https://ui-avatars.com/api/?name=True+Crime+Daily&background=b7e6c4&color=333&size=32" style="width:32px;height:32px;border-radius:50%;">
-            <span style="font-weight:600;">True Crime Daily</span>
-            <span style="color:#888;font-size:0.95em;">· 6h ago</span>
-          </div>
-          <div style="font-size:1.1em;font-weight:500;">Why Are We Obsessed With True Crime?</div>
-        </div>
-        <div class="feed-post">
-          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
-            <img src="https://ui-avatars.com/api/?name=Heist+Hub&background=f5f6ee&color=0d351c&size=32" style="width:32px;height:32px;border-radius:50%;">
-            <span style="font-weight:600;">Heist Hub</span>
-            <span style="color:#888;font-size:0.95em;">· 8h ago</span>
-          </div>
-          <div style="font-size:1.1em;font-weight:500;">The Most Bizarre Heists You've Never Heard Of</div>
-        </div>
-      </div>
-      <div id="feed-celeb" class="feed-section feed-mock">
-        <div class="feed-title">Your Celebrity News Feed</div>
-        <div class="feed-post">
-          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
-            <img src="https://ui-avatars.com/api/?name=Pop+Buzz&background=0d351c&color=fff&size=32" style="width:32px;height:32px;border-radius:50%;">
-            <span style="font-weight:600;">Pop Buzz</span>
+            <img src="https://ui-avatars.com/api/?name=HuffPost&background=0d351c&color=fff&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">HuffPost</span>
             <span style="color:#888;font-size:0.95em;">· 1h ago</span>
           </div>
-          <div style="font-size:1.1em;font-weight:500;">Taylor Swift and Travis Kelce: Secret Wedding?</div>
+          <div style="font-size:1.1em;font-weight:500;">Voting Rights Under Attack: New Laws Threaten Democracy and Could Disenfranchise Millions, Advocates Warn</div>
         </div>
         <div class="feed-post">
           <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
-            <img src="https://ui-avatars.com/api/?name=Style+Watch&background=474a2c&color=fff&size=32" style="width:32px;height:32px;border-radius:50%;">
-            <span style="font-weight:600;">Style Watch</span>
-            <span style="color:#888;font-size:0.95em;">· 3h ago</span>
-          </div>
-          <div style="font-size:1.1em;font-weight:500;">Why This Outfit Is Breaking the Internet</div>
-        </div>
-        <div class="feed-post">
-          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
-            <img src="https://ui-avatars.com/api/?name=Cancel+Culture+HQ&background=b7e6c4&color=333&size=32" style="width:32px;height:32px;border-radius:50%;">
-            <span style="font-weight:600;">Cancel Culture HQ</span>
-            <span style="color:#888;font-size:0.95em;">· 5h ago</span>
-          </div>
-          <div style="font-size:1.1em;font-weight:500;">10 Celebs Who Got Cancelled (And Why)</div>
-        </div>
-        <div class="feed-post">
-          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
-            <img src="https://ui-avatars.com/api/?name=Red+Carpet+Live&background=f5f6ee&color=0d351c&size=32" style="width:32px;height:32px;border-radius:50%;">
-            <span style="font-weight:600;">Red Carpet Live</span>
-            <span style="color:#888;font-size:0.95em;">· 7h ago</span>
-          </div>
-          <div style="font-size:1.1em;font-weight:500;">Red Carpet Fails: The Most Shocking Moments</div>
-        </div>
-      </div>
-      <div id="feed-conspiracy" class="feed-section feed-mock">
-        <div class="feed-title">Your Conspiracy Theory Feed</div>
-        <div class="feed-post">
-          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
-            <img src="https://ui-avatars.com/api/?name=Truth+Seekers&background=0d351c&color=fff&size=32" style="width:32px;height:32px;border-radius:50%;">
-            <span style="font-weight:600;">Truth Seekers</span>
+            <img src="https://ui-avatars.com/api/?name=The+Intercept&background=474a2c&color=fff&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">The Intercept</span>
             <span style="color:#888;font-size:0.95em;">· 2h ago</span>
           </div>
-          <div style="font-size:1.1em;font-weight:500;">The Truth Behind Chemtrails</div>
+          <div style="font-size:1.1em;font-weight:500;">Climate Crisis: Fossil Fuel Lobbyists Block Urgent Action as Extreme Weather Worsens Worldwide</div>
         </div>
         <div class="feed-post">
           <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
-            <img src="https://ui-avatars.com/api/?name=5G+Watch&background=474a2c&color=fff&size=32" style="width:32px;height:32px;border-radius:50%;">
-            <span style="font-weight:600;">5G Watch</span>
+            <img src="https://ui-avatars.com/api/?name=Daily+Beast&background=b7e6c4&color=333&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">Daily Beast</span>
+            <span style="color:#888;font-size:0.95em;">· 3h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">Supreme Court Rulings Roll Back LGBTQ+ Protections, Sparking Outrage Among Civil Rights Groups</div>
+        </div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=Mother+Jones&background=f5f6ee&color=0d351c&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">Mother Jones</span>
             <span style="color:#888;font-size:0.95em;">· 4h ago</span>
           </div>
-          <div style="font-size:1.1em;font-weight:500;">5G and Brain Control?</div>
+          <div style="font-size:1.1em;font-weight:500;">Wealth Gap Widens: Billionaires Get Richer Amid Crisis as Working Families Struggle to Get By</div>
         </div>
         <div class="feed-post">
           <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
-            <img src="https://ui-avatars.com/api/?name=Moon+Truthers&background=b7e6c4&color=333&size=32" style="width:32px;height:32px;border-radius:50%;">
-            <span style="font-weight:600;">Moon Truthers</span>
-            <span style="color:#888;font-size:0.95em;">· 6h ago</span>
+            <img src="https://ui-avatars.com/api/?name=Vox&background=0d351c&color=fff&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">Vox</span>
+            <span style="color:#888;font-size:0.95em;">· 5h ago</span>
           </div>
-          <div style="font-size:1.1em;font-weight:500;">Why the Moon Landing Was Faked</div>
-        </div>
-        <div class="feed-post">
-          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
-            <img src="https://ui-avatars.com/api/?name=Society+Files&background=f5f6ee&color=0d351c&size=32" style="width:32px;height:32px;border-radius:50%;">
-            <span style="font-weight:600;">Society Files</span>
-            <span style="color:#888;font-size:0.95em;">· 8h ago</span>
-          </div>
-          <div style="font-size:1.1em;font-weight:500;">Secret Societies: Who Really Runs the World?</div>
+          <div style="font-size:1.1em;font-weight:500;">Police Reform Stalls as Protests Continue Nationwide, Frustrating Activists Seeking Change</div>
         </div>
       </div>
-      <button class="switch-btn" id="switch-identity" style="display:none;">Switch Identity</button>
-      <div style="margin-top:2rem; font-size:1.1rem; color:var(--accent-color-dark); font-weight:600;">Did these feeds feel like the same internet? Notice how different these three mock feeds were.</div>
+      <div id="feed-neutral" class="feed-section feed-mock">
+        <div class="feed-title">A More Neutral News Feed </div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=AP+News&background=0d351c&color=fff&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">AP News</span>
+            <span style="color:#888;font-size:0.95em;">· 1h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">Several states passed new voting laws, sparking debate over their impact on voter access and election security.</div>
+        </div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=Reuters&background=474a2c&color=fff&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">Reuters</span>
+            <span style="color:#888;font-size:0.95em;">· 2h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">Climate legislation faces opposition from industry groups and lawmakers concerned about potential economic impact.</div>
+        </div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=NPR&background=b7e6c4&color=333&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">NPR</span>
+            <span style="color:#888;font-size:0.95em;">· 3h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">Supreme Court issued rulings affecting both religious rights and LGBTQ+ protections, drawing mixed reactions.</div>
+        </div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=BBC+News&background=f5f6ee&color=0d351c&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">BBC News</span>
+            <span style="color:#888;font-size:0.95em;">· 4h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">Economic data shows a widening wealth gap during the recent economic downturn, with significant effects on different groups.</div>
+        </div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=Reuters&background=0d351c&color=fff&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">Reuters</span>
+            <span style="color:#888;font-size:0.95em;">· 5h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">Nationwide protests and debates continue over police reform policies and their effectiveness.</div>
+        </div>
+      </div>
+      <div id="feed-conservative" class="feed-section feed-mock">
+        <div class="feed-title">A more conservative feed</div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=Fox+News&background=0d351c&color=fff&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">Fox News</span>
+            <span style="color:#888;font-size:0.95em;">· 1h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">Election Integrity: States Move to Secure the Vote from Pervasive Fraud, Despite Criticism from the Left</div>
+        </div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=National+Review&background=474a2c&color=fff&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">National Review</span>
+            <span style="color:#888;font-size:0.95em;">· 2h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">Climate Policy: The Steep Economic Costs of Green New Deal Spark Backlash from Businesses and Lawmakers</div>
+        </div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=NY+Post&background=b7e6c4&color=333&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">NY Post</span>
+            <span style="color:#888;font-size:0.95em;">· 3h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">Supreme Court Defends Religious Freedom in Landmark Case, Limiting LGBTQ+ Protections</div>
+        </div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=The+Federalist&background=f5f6ee&color=0d351c&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">The Federalist</span>
+            <span style="color:#888;font-size:0.95em;">· 4h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">Tax Hikes Hurt Small Businesses, Critics Say, as Wealth Gap Continues to Grow</div>
+        </div>
+        <div class="feed-post">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.3rem;">
+            <img src="https://ui-avatars.com/api/?name=Axios&background=0d351c&color=fff&size=32" style="width:32px;height:32px;border-radius:50%;">
+            <span style="font-weight:600;">Axios</span>
+            <span style="color:#888;font-size:0.95em;">· 5h ago</span>
+          </div>
+          <div style="font-size:1.1em;font-weight:500;">Police Face Challenges Amid Calls for Reform, With Officers Reporting Low Morale and Difficult Working Conditions</div>
+        </div>
+      </div>
+      <div style="margin-top:2rem; font-size:1.1rem; color:var(--accent-color-dark); font-weight:600;">Did these feeds feel like the same internet? <br> <br> Notice how the same events can look very different depending on the source. <br> <br> Important note: this doesn't *necessarily* mean that the articles here are fake or untrustworthy. This exercise is here so you can be more mindful of how algorithms, as well as headlines, quietly shape your perspective. Nobody is immune to bias! </div>
     </section>
     <div class="quiz-nav-btns">
       <a href="lesson4.html" class="quiz-nav-btn">&larr; Back</a>
       <a href="lesson6.html" class="quiz-nav-btn">Next &rarr;</a>
     </div>
+    <a href="methodology.html" class="verify-claims-link" style="display:block; margin: 2.5rem auto 0 auto; position:static; text-align:center;">Verify claims</a>
   </main>
 
+  <script src="script.js"></script>
   <script>
-    const topicCards = document.querySelectorAll('.topic-card');
+    const identityBtns = document.querySelectorAll('.identity-btn');
     const feeds = {
-      truecrime: document.getElementById('feed-truecrime'),
-      celeb: document.getElementById('feed-celeb'),
-      conspiracy: document.getElementById('feed-conspiracy')
+      progressive: document.getElementById('feed-progressive'),
+      neutral: document.getElementById('feed-neutral'),
+      conservative: document.getElementById('feed-conservative')
     };
-    const switchBtn = document.getElementById('switch-identity');
-    let currentFeed = null;
+    let currentFeed = 'neutral';
 
-    topicCards.forEach(card => {
-      card.addEventListener('click', function() {
-        topicCards.forEach(c => c.classList.remove('selected'));
-        this.classList.add('selected');
-        Object.values(feeds).forEach(feed => feed.classList.remove('active'));
-        const topic = this.getAttribute('data-topic');
-        feeds[topic].classList.add('active');
-        switchBtn.style.display = 'block';
-        currentFeed = topic;
+    function showFeed(feed) {
+      Object.values(feeds).forEach(f => f.classList.remove('active'));
+      feeds[feed].classList.add('active');
+      identityBtns.forEach(btn => btn.style.background = (btn.dataset.identity === feed) ? 'var(--accent-color)' : (btn.dataset.identity === 'neutral' ? '#eee' : 'var(--accent-color-light)'));
+      identityBtns.forEach(btn => btn.style.color = (btn.dataset.identity === feed) ? '#fff' : (btn.dataset.identity === 'neutral' ? '#333' : 'var(--accent-color-dark)'));
+      currentFeed = feed;
+    }
+
+    identityBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        showFeed(this.dataset.identity);
       });
     });
 
-    switchBtn.addEventListener('click', function() {
-      topicCards.forEach(c => c.classList.remove('selected'));
-      Object.values(feeds).forEach(feed => feed.classList.remove('active'));
-      switchBtn.style.display = 'none';
-      currentFeed = null;
-    });
+    // Show neutral feed by default
+    showFeed('neutral');
   </script>
 </body>
 </html> 

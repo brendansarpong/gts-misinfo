@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lesson 3: AI or IRL? - Project Prometheus</title>
+  <title>Lesson 3: AI or IRL? - Netwise</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,11 +104,22 @@
 <body>
   <nav>
     <div class="nav-content">
-      <a href="index.html" class="logo">Project Prometheus</a>
+      <a href="index.html" class="logo">Netwise</a>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="lessons.html">Lessons</a>
-        <a href="lessons-demo.html">Lesson Demo</a>
+        <div class="dropdown-parent"> 
+          <a href="lessons.html">Lessons</a>
+          <div class="nav-dropdown">
+            <a href="lesson_one.html">Intro</a>
+            <a href="lesson2.html">Sponsor Hunt</a>
+            <a href="lesson3.html">Ragebait</a>
+            <a href="lesson4.html">AI or IRL?</a>
+            <a href="lesson5.html">Algorithm Adventures</a>
+            <a href="lesson6.html">What's Their Angle?</a>
+            <a href="lesson7.html">Substantiate the Tweet</a>
+            <a href="lesson8.html">Finale...</a>
+          </div>
+        </div>
         <a href="methodology.html">Methodology</a>
       </div>
     </div>
@@ -121,9 +132,10 @@
           <div class="lesson-number">Lesson 3</div>
           <div class="lesson-title">AI or IRL?</div>
         </div>
+        <a href="methodology.html" class="verify-claims-link" style="position: absolute; right: 24px; top: 24px; font-size: 0.95rem; color: var(--accent-color-dark); background: var(--accent-color-lighter); border-radius: 8px; padding: 0.4rem 1rem; text-decoration: underline dotted; opacity: 0.85; z-index: 10; transition: background 0.2s;">Verify claims</a>
         <div class="lesson-body" style="font-size: 1.2rem;">
           <ul style="list-style: disc inside; margin-bottom: 2rem;">
-            <li style="margin-bottom: 1rem;"><a href="https://britannicaeducation.com/blog/quiz-real-or-ai/" target="_blank" class="external-link">AI is getting incredibly impressive at making convincing content.</a><span class="external-link-tooltip">This link takes you to an external website</span> So much so that, by the time this gets uploaded, these tips might be outdated. Regardless, as of right now, these tips are pretty solid for catching flaky AI pics.</li>
+            <li style="margin-bottom: 1rem;">AI is getting incredibly impressive at making convincing content. So much so that, by the time this gets uploaded, these tips might be outdated. Regardless, as of right now, these tips are pretty solid for catching flaky AI pics.</li>
             <li style="margin-bottom: 1rem;">Check the hands, faces, and symmetry. AI often messes up fingers, facial features, or creates mismatched earrings and logos.</li>
             <li style="margin-bottom: 1rem;">Look for background glitches. Things might blur together, melt into each other, or have unrealistic depth or perspective.</li>
             <li style="margin-bottom: 1rem;">Watch for lighting and texture issues. Shadows may fall in the wrong direction, and skin might look unnaturally smooth or plastic-like. A lot of times AI makes things look too perfect or cinematic.</li>
@@ -141,6 +153,7 @@
       <a href="lesson3.html" class="quiz-nav-btn">&larr; Back</a>
       <a href="lesson5.html" class="quiz-nav-btn">Next &rarr;</a>
     </div>
+    <a href="methodology.html" class="verify-claims-link" style="display:block; margin: 2.5rem auto 0 auto; position:static; text-align:center;">Verify claims</a>
   </main>
 
   <script>
@@ -237,5 +250,6 @@
 
     renderQuizCard(currentQuiz);
   </script>
+  <script src="script.js"></script>
 </body>
 </html> 

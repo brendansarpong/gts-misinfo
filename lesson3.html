@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lesson 2: Ragebait - Project Prometheus</title>
+  <title>Lesson 2: Ragebait - Netwise</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -99,11 +99,22 @@
 <body>
   <nav>
     <div class="nav-content">
-      <a href="index.html" class="logo">Project Prometheus</a>
+      <a href="index.html" class="logo">Netwise</a>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="lessons.html">Lessons</a>
-        <a href="lessons-demo.html">Lesson Demo</a>
+        <div class="dropdown-parent"> 
+          <a href="lessons.html">Lessons</a>
+          <div class="nav-dropdown">
+            <a href="lesson_one.html">Intro</a>
+            <a href="lesson2.html">Sponsor Hunt</a>
+            <a href="lesson3.html">Ragebait</a>
+            <a href="lesson4.html">AI or IRL?</a>
+            <a href="lesson5.html">Algorithm Adventures</a>
+            <a href="lesson6.html">What's Their Angle?</a>
+            <a href="lesson7.html">Substantiate the Tweet</a>
+            <a href="lesson8.html">Finale...</a>
+          </div>
+        </div>
         <a href="methodology.html">Methodology</a>
       </div>
     </div>
@@ -116,11 +127,12 @@
           <div class="lesson-number">Lesson 2</div>
           <div class="lesson-title">Ragebait</div>
         </div>
+        <a href="methodology.html" class="verify-claims-link" style="position: absolute; right: 24px; top: 24px; font-size: 0.95rem; color: var(--accent-color-dark); background: var(--accent-color-lighter); border-radius: 8px; padding: 0.4rem 1rem; text-decoration: underline dotted; opacity: 0.85; z-index: 10; transition: background 0.2s;">Verify claims</a>
         <div class="lesson-body" style="font-size: 1.2rem;">
           <ul style="list-style: disc inside; margin-bottom: 2rem;">
             <li style="margin-bottom: 1rem;">You ever clicked a headline and immediately felt angry, anxious, or fired up?</li>
             <li style="margin-bottom: 1rem;">That's not an accident. Some content is written to manipulate your emotions.</li>
-            <li style="margin-bottom: 1rem;">It's called clickbait or "ragebait", and it works by triggering a quick reaction. In these cases you don't slow down and think critically. That's what a lot of people want. <a href="https://www.bbc.com/news/articles/c4gp555xy5ro" target="_blank" class="external-link">More anger → more engagement → more $$$ in their pockets.</a><span class="external-link-tooltip">This link takes you to an external website</span></li>
+            <li style="margin-bottom: 1rem;">It's called clickbait or "ragebait", and it works by triggering a quick reaction. In these cases you don't slow down and think critically. That's what a lot of people want. More anger → more engagement → more $$$ in their pockets.</li>
             <li style="margin-bottom: 1rem;">Keep an eye out for intentionally inflammatory language, biased phrasing, or omission of details.</li>
             <li style="margin-bottom: 1rem;">In this lesson, we'll explore the difference between emotionally charged content and balanced, trustworthy sources. You'll learn to spot the tactics: extreme wording, missing context, or outrageous claims.</li>
           </ul>
@@ -161,6 +173,7 @@
       <a href="lesson2.html" class="quiz-nav-btn" style="background: var(--accent-color); color: #fff; border: none; border-radius: var(--border-radius); padding: 0.75rem 2.5rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">&larr; Back</a>
       <a href="lesson4.html" class="quiz-nav-btn" style="background: var(--accent-color); color: #fff; border: none; border-radius: var(--border-radius); padding: 0.75rem 2.5rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">Next &rarr;</a>
     </div>
+    <a href="methodology.html" class="verify-claims-link" style="display:block; margin: 2.5rem auto 0 auto; position:static; text-align:center;">Verify claims</a>
   </main>
 
   <script>
@@ -169,5 +182,6 @@
       this.disabled = true;
     });
   </script>
+  <script src="script.js"></script>
 </body>
 </html> 

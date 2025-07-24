@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lesson 7 The Finale - Project Prometheus</title>
+  <title>Lesson 7 The Finale - Netwise</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,11 +72,22 @@
 <body>
   <nav>
     <div class="nav-content">
-      <a href="index.html" class="logo">Project Prometheus</a>
+      <a href="index.html" class="logo">Netwise</a>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="lessons.html">Lessons</a>
-        <a href="lessons-demo.html">Lesson Demo</a>
+        <div class="dropdown-parent"> 
+          <a href="lessons.html">Lessons</a>
+          <div class="nav-dropdown">
+            <a href="lesson_one.html">Intro</a>
+            <a href="lesson2.html">Sponsor Hunt</a>
+            <a href="lesson3.html">Ragebait</a>
+            <a href="lesson4.html">AI or IRL?</a>
+            <a href="lesson5.html">Algorithm Adventures</a>
+            <a href="lesson6.html">What's Their Angle?</a>
+            <a href="lesson7.html">Substantiate the Tweet</a>
+            <a href="lesson8.html">Finale...</a>
+          </div>
+        </div>
         <a href="methodology.html">Methodology</a>
       </div>
     </div>
@@ -89,6 +100,7 @@
           <div class="lesson-number">Lesson 7</div>
           <div class="lesson-title">The Finale</div>
         </div>
+        <a href="methodology.html" class="verify-claims-link" style="position: absolute; right: 24px; top: 24px; font-size: 0.95rem; color: var(--accent-color-dark); background: var(--accent-color-lighter); border-radius: 8px; padding: 0.4rem 1rem; text-decoration: underline dotted; opacity: 0.85; z-index: 10; transition: background 0.2s;">Verify claims</a>
         <div class="lesson-body" style="font-size: 1.2rem;">
           <ul style="list-style: disc inside; margin-bottom: 2rem;">
             <li style="margin-bottom: 1rem;">You've now seen how misinformation spreads, how AI can fake reality, how algorithms can warp your feed, and more.</li>
@@ -104,7 +116,7 @@
       <div class="completion-icon">🎉</div>
       <div class="completion-title">Course Complete</div>
       <div class="completion-text">
-        Congrats - you completed all the lessons in Project Prometheus. 
+        Congrats - you completed all the lessons in Netwise. 
         You now have some tools to navigate the modern internet.
       </div>
       <a href="https://forms.gle/cuW382ac8j76ayeZ8" class="survey-btn" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: var(--accent-color); color: #fff; border: none; border-radius: var(--border-radius); padding:1.5em 3rem; font-size: 1.3rem; font-weight: 700; text-decoration: none; margin: 2rem 0; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(133, 80, 1, 0.2);">Take my Post-Course Survey Please (this will take you to a new site)</a>
@@ -115,6 +127,8 @@
       <a href="lesson7.html" class="quiz-nav-btn" style="background: var(--accent-color); color: #fff; border: none; border-radius: var(--border-radius); padding: 0.75rem 2.5rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">&larr; Back</a>
       <a href="index.html" class="quiz-nav-btn" style="background: var(--accent-color); color: #fff; border: none; border-radius: var(--border-radius); padding: 0.75rem 2.5rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">Return Home 🏠</a>
     </div>
+    <a href="methodology.html" class="verify-claims-link" style="display:block; margin: 2.5rem auto 0 auto; position:static; text-align:center;">Verify claims</a>
   </main>
+  <script src="script.js"></script>
 </body>
 </html> 
