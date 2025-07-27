@@ -58,7 +58,7 @@ nav {
 .logo {
     color: var(--accent-color-dark);
     font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-decoration: none;
     letter-spacing: -0.02em;
     transition: transform 0.3s ease;
